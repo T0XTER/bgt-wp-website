@@ -205,7 +205,7 @@ footer a:hover,
 .banner_item_image {
     width: 100%;
     height: 100%;
-    background: url(../images/banner.png), center top no-repeat;
+    background: url(../assets/images/banner.png), center top no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     overflow: hidden;
@@ -289,7 +289,7 @@ footer a:hover,
     position: relative;
     display: inline-block;
     float: left;
-    background: url(../images/soc-icon.png), no-repeat;
+    background: url(../assets/images/soc-icon.png), no-repeat;
     z-index: 200;
 }
 
@@ -331,7 +331,7 @@ footer a:hover,
     width: 100%;
     height: 6px;
     margin: 0 auto 40px;
-    background: url(../images/main_horizontal_divider.png) 100% 50% repeat-x;
+    background: url(../assets/images/main_horizontal_divider.png) 100% 50% repeat-x;
 }
 
 .top_two_big_item {
@@ -361,11 +361,11 @@ footer a:hover,
 }
 
 #lama {
-    background-image: url(../images/Layer142.png);
+    background-image: url(../assets/images/Layer142.png);
 }
 
 #boat {
-    background-image: url(../images/Layer143.png);
+    background-image: url(../assets/images/Layer143.png);
 }
 
 .top_two_big_item_tag {
@@ -433,23 +433,23 @@ footer a:hover,
 }
 
 #pool {
-    background-image: url(../images/Layer144.png);
+    background-image: url(../assets/images/Layer144.png);
 }
 
 #conversation {
-    background-image: url(../images/Layer145.png);
+    background-image: url(../assets/images/Layer145.png);
 }
 
 #fountain {
-    background-image: url(../images/Layer146.png);
+    background-image: url(../assets/images/Layer146.png);
 }
 
 #tropic_architect {
-    background-image: url(../images/Layer147.png);
+    background-image: url(../assets/images/Layer147.png);
 }
 
 #aruba {
-    background-image: url(../images/Layer148.png);
+    background-image: url(../assets/images/Layer148.png);
 }
 
 .middle_two_big_item {
@@ -482,18 +482,18 @@ footer a:hover,
 }
 
 #bay {
-    background-image: url(../images/Layer150.png);
+    background-image: url(../assets/images/Layer150.png);
 }
 
 #eur_architect {
-    background-image: url(../images/Layer149.png);
+    background-image: url(../assets/images/Layer149.png);
 }
 
 #WP_news_ad {
     width: 100%;
     height: 100%;
     position: relative;
-    background: url(../images/Layer49.png) no-repeat center bottom;
+    background: url(../assets/images/Layer49.png) no-repeat center bottom;
     -webkit-background-size: contain;
     background-size: contain;
     z-index: 0;
@@ -541,19 +541,19 @@ footer a:hover,
 }
 
 #bridge {
-    background-image: url(../images/Layer151.png);
+    background-image: url(../assets/images/Layer151.png);
 }
 
 #fahwerk {
-    background-image: url(../images/Layer152.png);
+    background-image: url(../assets/images/Layer152.png);
 }
 
 #lake {
-    background-image: url(../images/Layer153.png);
+    background-image: url(../assets/images/Layer153.png);
 }
 
 #boys {
-    background-image: url(../images/Layer154.png);
+    background-image: url(../assets/images/Layer154.png);
 }
 
 .bottom_block_left_item_header {
@@ -692,27 +692,27 @@ footer a:hover,
 }
 
 #car {
-    background-image: url(../images/Layer103.png);
+    background-image: url(../assets/images/Layer103.png);
 }
 
 #sea_view {
-    background-image: url(../images/Layer156.png);
+    background-image: url(../assets/images/Layer156.png);
 }
 
 #footer_lama {
-    background-image: url(../images/Layer157.png);
+    background-image: url(../assets/images/Layer157.png);
 }
 
 #mntn_tent {
-    background-image: url(../images/Layer158.png);
+    background-image: url(../assets/images/Layer158.png);
 }
 
 #footer_eur_architect {
-    background-image: url(../images/Layer159.png);
+    background-image: url(../assets/images/Layer159.png);
 }
 
 #girl_bridge {
-    background-image: url(../images/Layer160.png);
+    background-image: url(../assets/images/Layer160.png);
 }
 
 .footer_widget_item_text {
@@ -732,7 +732,7 @@ footer a:hover,
     max-width: 520px;
     height: 6px;
     margin: 0 auto 27px;
-    background: url(../images/horizontal_divider_mob.png) 100% 50% repeat-x;
+    background: url(../assets/images/horizontal_divider_mob.png) 100% 50% repeat-x;
 }
 
 .footer-logo {
@@ -967,7 +967,7 @@ footer a:hover,
     .main-horizontal-divider {
         max-width: 860px;
         height: 7px;
-        background: url(../images/main_horizontal_divider.png) 100% 50% repeat-x;
+        background: url(../assets/images/main_horizontal_divider.png) 100% 50% repeat-x;
     }
 
     .footer_about {
@@ -977,7 +977,7 @@ footer a:hover,
     .horizontal-divider {
         max-width: 860px;
         height: 7px;
-        background: url(../images/horizontal_divider_tab.png) 100% 50% repeat-x;
+        background: url(../assets/images/horizontal_divider_tab.png) 100% 50% repeat-x;
     }
 
     .footer-logo {
@@ -1089,7 +1089,7 @@ footer a:hover,
         background: center center no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
-        background-image: url(../images/Layer155.png);
+        background-image: url(../assets/images/Layer155.png);
         overflow: hidden;
         z-index: 0;
     }

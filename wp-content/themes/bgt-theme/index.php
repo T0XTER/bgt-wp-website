@@ -27,7 +27,9 @@
                                 </h2>
                                 <p class="banner-item-tag text-info">
                                     <span><img src="<?php bloginfo('template_url'); ?>/assets/images/group.png"></span>
-                                    <span>TRIP IDEAS</span>
+                                    <span><?php $category = get_the_category();
+                                                echo $category[0]->cat_name; ?>
+                                    </span>
                                 </p>
                                 <p class="text-white">
                                     <span><?php the_author(); ?></span>
@@ -39,8 +41,6 @@
                         <?php
                     }
                 }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
                 ?>
             </div>
         </div>
@@ -774,4 +774,4 @@
     </div>
 </div>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'wp_bgt' );
 
 /** Имя пользователя MySQL */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'serg' );
 
 /** Пароль к базе данных MySQL */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'Gbnnfrec^40917' );
 
 /** Имя сервера MySQL */
 define( 'DB_HOST', 'localhost' );
