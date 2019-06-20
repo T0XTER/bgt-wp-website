@@ -6,7 +6,7 @@
                 <?php
                 // задаем нужные нам критерии выборки данных из БД
                 $args = array(
-                    'posts_per_page' =>"1",
+                        'posts_per_page' => '1',
                     'orderby' => 'date'
                 );
 
@@ -19,7 +19,15 @@
                         ?>
                         <a href="<?php the_permalink() ?>" class="banner_item_wrap img-hover">
                             <div class="banner_image_wrap">
-                                <div class="banner_item_image"></div>
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '1171x433')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="banner_item_image" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="banner_items_text_wrap">
                                 <h2 class="banner-item-header">
@@ -27,7 +35,8 @@
                                 </h2>
                                 <p class="banner-item-tag text-info">
                                     <span><img src="<?php bloginfo('template_url'); ?>/assets/images/group.png"></span>
-                                    <span><?php $category = get_the_category();
+                                    <span>
+                                        <?php $category = get_the_category();
                                                 echo $category[0]->cat_name; ?>
                                     </span>
                                 </p>
@@ -39,8 +48,9 @@
                             </div>
                         </a>
                         <?php
-                    }
-                }
+                    }//конец while
+                    wp_reset_postdata();
+                }//конец if
                 ?>
             </div>
         </div>
@@ -73,30 +83,37 @@
 <div class="top_two_big">
     <div class="container">
         <div class="row">
+            <?php
+            // задаем нужные нам критерии выборки данных из БД
+            $args2 = array(
+                'posts_per_page' => '2',
+                'orderby' => 'date',
+                'post__not_in' => ['50']
+            );
+
+            $query2 = new WP_Query($args2);
+
+            // Цикл
+            if ($query2->have_posts()) {
+            while ($query2->have_posts()) {
+            $query2->the_post();
+            ?>
             <div class="col-12 col-lg-6">
                 <article class="top_two_big_item">
-                    <?php
-                    // задаем нужные нам критерии выборки данных из БД
-                    $args = array(
-                        'posts_per_page' =>"1",
-                        'orderby' => 'date'
-                    );
-
-                    $query = new WP_Query($args);
-
-                    // Цикл
-                    if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                            $query->the_post();
-                    ?>
                     <a class="top_two_big_item_wrap">
                         <div class="top_two_big_images_wrap">
-                            <div class="top_two_big_item_img img-hover" id="lama"></div>
-                            <p class="top_two_big_item_tag"><span>CULTURE</span></p>
+                            <div class="top_two_big_item_img img-hover" id="lama">
+                                <?php the_post_thumbnail() ?>
+                            </div>
+                            <p class="top_two_big_item_tag">
+                                <span>
+                                    <?php $category = get_the_category();
+                                        echo $category[0]->cat_name; ?>
+                                </span>
+                            </p>
                         </div>
                         <div class="top_two_big_text_wrap">
                             <h2 class="top_two_big_item_header text-hover">
-                                8 INCREDIBLE PICTURES FROM THE TRAVEL PHOTOGRAPHER
                                 <?php the_title(); ?>
                             </h2>
                             <div class="top_two_big_item_meta">
@@ -106,56 +123,15 @@
                             </div>
                         </div>
                     </a>
-                    <?php
-                        }
-                    }
-                    // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                    wp_reset_postdata();
-                    ?>
                 </article>
             </div>
-            <div class="col-12 col-lg-6">
-                <article class="top_two_big_item">
-                    <?php
-                    // задаем нужные нам критерии выборки данных из БД
-                    $args = array(
-                        'posts_per_page' =>"1",
-                        'orderby' => 'date'
-                    );
-
-                    $query = new WP_Query($args);
-
-                    // Цикл
-                    if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                    $query->the_post();
-                    ?>
-                    <a class="top_two_big_item_wrap">
-                        <div class="top_two_big_images_wrap">
-                            <div class="top_two_big_item_img img-hover" id="boat"></div>
-                            <p class="top_two_big_item_tag"><span>TRIP IDEAS</span></p>
-                        </div>
-                        <div class="top_two_big_text_wrap">
-                            <h2 class="top_two_big_item_header text-hover">
-                                8 INCREDIBLE PICTURES FROM THE TRAVEL PHOTOGRAPHER
-                                <?php the_title(); ?>
-                            </h2>
-                            <div class="top_two_big_item_meta">
-                                <span class="top_two_big_item_author"><?php the_author(); ?></span>
-                                <span>-</span>
-                                <span class="top_two_big_item_date"><?php the_time('M j, Y'); ?></span>
-                            </div>
-                        </div>
-                    </a>
-                        <?php
-                    }
-                    }
-                    // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                    wp_reset_postdata();
-                    ?>
-                </article>
-            </div>
+            <?php
+            }//конец while
+                wp_reset_postdata();
+            }//конец if
+            ?>
         </div>
+
     </div>
 </div>
 <div class="mid_ad">
@@ -170,20 +146,8 @@
         <div class="section-header"><h2>TRIP ADVICES</h2></div>
         <div class="main-horizontal-divider"></div>
         <div class="middle_five_small_block_wrap">
+
             <article class="middle_five_small_block_item">
-                <?php
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'posts_per_page' =>"1",
-                    'orderby' => 'date'
-                );
-
-                $query = new WP_Query($args);
-
-                // Цикл
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post(); ?>
                         <a class="middle_five_small_block_item_wrap">
                             <div class="middle_five_small_block_img_wrap">
                                 <div class="middle_five_small_block_img img-hover" id="pool"></div>
@@ -193,28 +157,8 @@
                                     Papagayo<?php the_title(); ?></p>
                             </div>
                         </a>
-                        <?php
-                    }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
             </article>
             <article class="middle_five_small_block_item">
-                <?php
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'posts_per_page' =>"1",
-                    'orderby' => 'date'
-                );
-
-                $query = new WP_Query($args);
-
-                // Цикл
-                if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                $query->the_post();
-                ?>
                 <a class="middle_five_small_block_item_wrap">
                     <div class="middle_five_small_block_img_wrap">
                         <div class="middle_five_small_block_img img-hover" id="conversation"></div>
@@ -223,28 +167,8 @@
                         <p class="text-hover">8 Can`t-Miss European Destinations<?php the_title(); ?></p>
                     </div>
                 </a>
-                    <?php
-                }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
             </article>
             <article class="middle_five_small_block_item">
-                <?php
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'posts_per_page' =>"1",
-                    'orderby' => 'date'
-                );
-
-                $query = new WP_Query($args);
-
-                // Цикл
-                if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                $query->the_post();
-                ?>
                 <a class="middle_five_small_block_item_wrap">
                     <div class="middle_five_small_block_img_wrap">
                         <div class="middle_five_small_block_img img-hover" id="tropic_architect"></div>
@@ -253,28 +177,8 @@
                         <p class="text-hover">Where Can I Learn Spanish in Madrid?<?php the_title(); ?></p>
                     </div>
                 </a>
-                    <?php
-                }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
             </article>
             <article class="middle_five_small_block_item">
-                <?php
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'posts_per_page' =>"1",
-                    'orderby' => 'date'
-                );
-
-                $query = new WP_Query($args);
-
-                // Цикл
-                if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                $query->the_post();
-                ?>
                 <a class="middle_five_small_block_item_wrap">
                     <div class="middle_five_small_block_img_wrap">
                         <div class="middle_five_small_block_img img-hover" id="aruba"></div>
@@ -283,28 +187,8 @@
                         <p class="text-hover">10 Landscapes You Won`t Have Even<?php the_title(); ?></p>
                     </div>
                 </a>
-                    <?php
-                }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
             </article>
             <article class="middle_five_small_block_item d-none d-lg-block">
-                <?php
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'posts_per_page' =>"1",
-                    'orderby' => 'date'
-                );
-
-                $query = new WP_Query($args);
-
-                // Цикл
-                if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                $query->the_post();
-                ?>
                 <a class="middle_five_small_block_item_wrap">
                     <div class="middle_five_small_block_img_wrap">
                         <div class="middle_five_small_block_img img-hover" id="fountain"></div>
@@ -313,12 +197,6 @@
                         <p class="text-hover">Top Most Beautiful Islands In The World<?php the_title(); ?></p>
                     </div>
                 </a>
-                    <?php
-                }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
             </article>
         </div>
     </div>
@@ -333,20 +211,6 @@
             <div class="col-12 col-lg-4 middle_two_big_block">
                 <div class="middle_two_big__block_wrap">
                     <div class="middle_two_big_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
-
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a href="http://" class="middle_two_big_item_link">
                             <div class="middle_two_big_img">
                                 <div class="middle_two_big_item_img_wrap">
@@ -365,32 +229,12 @@
                                 <p class="middle_two_big_item_read_more">Read more>></p>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-4 middle_two_big_block">
                 <div class="middle_two_big__block_wrap">
                     <div class="middle_two_big_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
-
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a href="http://" class="middle_two_big_item_link">
                             <div class="middle_two_big_img">
                                 <div class="middle_two_big_item_img_wrap">
@@ -409,12 +253,6 @@
                                 <p class="middle_two_big_item_read_more">Read more>></p>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </div>
                 </div>
             </div>
@@ -458,20 +296,6 @@
             <div class="col-12 col-lg-8 bottom_block_left">
                 <div class="bottom_block_left_wrap">
                     <article class="bottom_block_left_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
-
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover" id="bridge"></div>
@@ -489,28 +313,9 @@
                                 </div>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </article>
                     <article class="bottom_block_left_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
 
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover" id="fahwerk"></div>
@@ -528,28 +333,9 @@
                                 </div>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </article>
                     <article class="bottom_block_left_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
 
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover" id="lake"></div>
@@ -567,28 +353,8 @@
                                 </div>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </article>
                     <article class="bottom_block_left_item">
-                        <?php
-                        // задаем нужные нам критерии выборки данных из БД
-                        $args = array(
-                            'posts_per_page' =>"1",
-                            'orderby' => 'date'
-                        );
-
-                        $query = new WP_Query($args);
-
-                        // Цикл
-                        if ($query->have_posts()) {
-                        while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover" id="boys"></div>
@@ -606,12 +372,6 @@
                                 </div>
                             </div>
                         </a>
-                            <?php
-                        }
-                        }
-                        // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                        wp_reset_postdata();
-                        ?>
                     </article>
                 </div>
             </div>
@@ -619,20 +379,6 @@
                 <div class="bottom_block_right_wrap">
                     <div class="bottom_block_right_no_img">
                         <article class="bottom_block_right_no_img_item">
-                            <?php
-                            // задаем нужные нам критерии выборки данных из БД
-                            $args = array(
-                                'posts_per_page' =>"1",
-                                'orderby' => 'date'
-                            );
-
-                            $query = new WP_Query($args);
-
-                            // Цикл
-                            if ($query->have_posts()) {
-                            while ($query->have_posts()) {
-                            $query->the_post();
-                            ?>
                             <a class="bottom_block_right_no_img_item_wrap">
                                 <div class="bottom_block_right_no_img_item_text_wrap">
                                     <div class="bottom_block_right_no_img_item_header">
@@ -647,28 +393,8 @@
                                     </div>
                                 </div>
                             </a>
-                                <?php
-                            }
-                            }
-                            // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                            wp_reset_postdata();
-                            ?>
                         </article>
                         <article class="bottom_block_right_no_img_item">
-                            <?php
-                            // задаем нужные нам критерии выборки данных из БД
-                            $args = array(
-                                'posts_per_page' =>"1",
-                                'orderby' => 'date'
-                            );
-
-                            $query = new WP_Query($args);
-
-                            // Цикл
-                            if ($query->have_posts()) {
-                            while ($query->have_posts()) {
-                            $query->the_post();
-                            ?>
                             <a class="bottom_block_right_no_img_item_wrap">
                                 <div class="bottom_block_right_no_img_item_text_wrap">
                                     <div class="bottom_block_right_no_img_item_header">
@@ -683,28 +409,8 @@
                                     </div>
                                 </div>
                             </a>
-                                <?php
-                            }
-                            }
-                            // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                            wp_reset_postdata();
-                            ?>
                         </article>
                         <article class="bottom_block_right_no_img_item">
-                            <?php
-                            // задаем нужные нам критерии выборки данных из БД
-                            $args = array(
-                                'posts_per_page' =>"1",
-                                'orderby' => 'date'
-                            );
-
-                            $query = new WP_Query($args);
-
-                            // Цикл
-                            if ($query->have_posts()) {
-                            while ($query->have_posts()) {
-                            $query->the_post();
-                            ?>
                             <a class="bottom_block_right_no_img_item_wrap">
                                 <div class="bottom_block_right_no_img_item_text_wrap">
                                     <div class="bottom_block_right_no_img_item_header">
@@ -719,30 +425,10 @@
                                     </div>
                                 </div>
                             </a>
-                                <?php
-                            }
-                            }
-                            // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                            wp_reset_postdata();
-                            ?>
                         </article>
                     </div>
                     <div class="bottom_block_right_img">
                         <article class="bottom_block_right_item">
-                            <?php
-                            // задаем нужные нам критерии выборки данных из БД
-                            $args = array(
-                                'posts_per_page' =>"1",
-                                'orderby' => 'date'
-                            );
-
-                            $query = new WP_Query($args);
-
-                            // Цикл
-                            if ($query->have_posts()) {
-                            while ($query->have_posts()) {
-                            $query->the_post();
-                            ?>
                             <a class="bottom_block_right_item_wrap">
                                 <div class="bottom_block_right_item_images_wrap">
                                     <div class="bottom_block_right_item_image woman_in_hat img-hover"></div>
@@ -760,12 +446,6 @@
                                     </div>
                                 </div>
                             </a>
-                                <?php
-                            }
-                            }
-                            // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                            wp_reset_postdata();
-                            ?>
                         </article>
                     </div>
                 </div>
