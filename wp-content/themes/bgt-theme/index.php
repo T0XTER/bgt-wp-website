@@ -102,9 +102,15 @@
                 <article class="top_two_big_item">
                     <a class="top_two_big_item_wrap">
                         <div class="top_two_big_images_wrap">
-                            <div class="top_two_big_item_img img-hover" id="lama">
-                                <?php the_post_thumbnail() ?>
-                            </div>
+                            <?php
+                            $imageArray = get_post_thumbnail_id()
+                                ? wp_get_attachment_image_src(get_post_thumbnail_id(), '589x483')
+                                : [];
+                            $imageSrc = array_key_exists(0, $imageArray)
+                                ? $imageArray[0]
+                                : '';
+                            ?>
+                            <div class="top_two_big_item_img img-hover" id="lama" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             <p class="top_two_big_item_tag">
                                 <span>
                                     <?php $category = get_the_category();
@@ -131,7 +137,6 @@
             }//конец if
             ?>
         </div>
-
     </div>
 </div>
 <div class="mid_ad">
@@ -146,58 +151,46 @@
         <div class="section-header"><h2>TRIP ADVICES</h2></div>
         <div class="main-horizontal-divider"></div>
         <div class="middle_five_small_block_wrap">
+            <?php
+            // задаем нужные нам критерии выборки данных из БД
+            $args3 = array(
+                    'category_name' => 'без-рубрики',
+                'tag' => 'trip-advices',
+                'numberposts' => 5,
+                'posts_per_page' => 5,
+                'orderby' => 'date',
+            );
 
-            <article class="middle_five_small_block_item">
-                        <a class="middle_five_small_block_item_wrap">
-                            <div class="middle_five_small_block_img_wrap">
-                                <div class="middle_five_small_block_img img-hover" id="pool"></div>
-                            </div>
-                            <div class="middle_five_small_block_text_wrap">
-                                <p class="text-hover">Hotel Debuts in Costa Rica: Andaz Peninsula
-                                    Papagayo<?php the_title(); ?></p>
-                            </div>
-                        </a>
-            </article>
+            $query3 = new WP_Query($args3);
+
+            // Цикл
+            if ($query3->have_posts()) {
+            while ($query3->have_posts()) {
+            $query3->the_post();
+            ?>
             <article class="middle_five_small_block_item">
                 <a class="middle_five_small_block_item_wrap">
                     <div class="middle_five_small_block_img_wrap">
-                        <div class="middle_five_small_block_img img-hover" id="conversation"></div>
+                        <?php
+                        $imageArray = get_post_thumbnail_id()
+                            ? wp_get_attachment_image_src(get_post_thumbnail_id(), '325x181')
+                            : [];
+                        $imageSrc = array_key_exists(0, $imageArray)
+                            ? $imageArray[0]
+                            : '';
+                        ?>
+                        <div class="middle_five_small_block_img img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                     </div>
                     <div class="middle_five_small_block_text_wrap">
-                        <p class="text-hover">8 Can`t-Miss European Destinations<?php the_title(); ?></p>
+                        <p class="text-hover"><?php the_title(); ?></p>
                     </div>
                 </a>
             </article>
-            <article class="middle_five_small_block_item">
-                <a class="middle_five_small_block_item_wrap">
-                    <div class="middle_five_small_block_img_wrap">
-                        <div class="middle_five_small_block_img img-hover" id="tropic_architect"></div>
-                    </div>
-                    <div class="middle_five_small_block_text_wrap">
-                        <p class="text-hover">Where Can I Learn Spanish in Madrid?<?php the_title(); ?></p>
-                    </div>
-                </a>
-            </article>
-            <article class="middle_five_small_block_item">
-                <a class="middle_five_small_block_item_wrap">
-                    <div class="middle_five_small_block_img_wrap">
-                        <div class="middle_five_small_block_img img-hover" id="aruba"></div>
-                    </div>
-                    <div class="middle_five_small_block_text_wrap">
-                        <p class="text-hover">10 Landscapes You Won`t Have Even<?php the_title(); ?></p>
-                    </div>
-                </a>
-            </article>
-            <article class="middle_five_small_block_item d-none d-lg-block">
-                <a class="middle_five_small_block_item_wrap">
-                    <div class="middle_five_small_block_img_wrap">
-                        <div class="middle_five_small_block_img img-hover" id="fountain"></div>
-                    </div>
-                    <div class="middle_five_small_block_text_wrap">
-                        <p class="text-hover">Top Most Beautiful Islands In The World<?php the_title(); ?></p>
-                    </div>
-                </a>
-            </article>
+                <?php
+            }//конец while
+                wp_reset_postdata();
+            }//конец if
+            ?>
         </div>
     </div>
 </div>
@@ -208,54 +201,57 @@
             <div class="main-horizontal-divider"></div>
         </div>
         <div class="row">
+            <?php
+            // задаем нужные нам критерии выборки данных из БД
+            $args4 = array(
+                'category_name' => 'travel-blog',
+                'tag' => 'travel-blog',
+                'numberposts' => 2,
+                'posts_per_page' => 2,
+                'orderby' => 'date',
+            );
+
+            $query4 = new WP_Query($args4);
+
+            // Цикл
+            if ($query4->have_posts()) {
+            while ($query4->have_posts()) {
+            $query4->the_post();
+            ?>
             <div class="col-12 col-lg-4 middle_two_big_block">
                 <div class="middle_two_big__block_wrap">
                     <div class="middle_two_big_item">
                         <a href="http://" class="middle_two_big_item_link">
                             <div class="middle_two_big_img">
                                 <div class="middle_two_big_item_img_wrap">
-                                    <div class="middle_two_big_item_img img-hover" id="bay"></div>
+                                    <?php
+                                    $imageArray = get_post_thumbnail_id()
+                                        ? wp_get_attachment_image_src(get_post_thumbnail_id(), '325x181')
+                                        : [];
+                                    $imageSrc = array_key_exists(0, $imageArray)
+                                        ? $imageArray[0]
+                                        : '';
+                                    ?>
+                                    <div class="middle_two_big_item_img img-hover" id="bay" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                                 </div>
                             </div>
                             <div class="middle_two_big_item_text_wrap">
                                 <p class="middle_two_big_cat">TRAVEL BLOG</p>
                                 <h2 class="middle_two_big_item_header text-hover">
-                                    8 INCREDIBLE PICTURES FROM THE TRAVEL PHOTOGRAPHER
                                     <?php the_title(); ?>
                                 </h2>
-                                <p class="middle_two_big_item_text">More off this less hello salamander lied porpoise
-                                    much over tightly circa horse taped so innocuously outside crud mightly
-                                    rigorous...</p>
+                                <p class="middle_two_big_item_text"><?php the_excerpt(); ?></p>
                                 <p class="middle_two_big_item_read_more">Read more>></p>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 middle_two_big_block">
-                <div class="middle_two_big__block_wrap">
-                    <div class="middle_two_big_item">
-                        <a href="http://" class="middle_two_big_item_link">
-                            <div class="middle_two_big_img">
-                                <div class="middle_two_big_item_img_wrap">
-                                    <div class="middle_two_big_item_img img-hover" id="eur_architect"></div>
-                                </div>
-                            </div>
-                            <div class="middle_two_big_item_text_wrap">
-                                <p class="middle_two_big_cat">TRAVEL BLOG</p>
-                                <h2 class="middle_two_big_item_header text-hover">
-                                    8 INCREDIBLE PICTURES FROM THE TRAVEL PHOTOGRAPHER
-                                    <?php the_title(); ?>
-                                </h2>
-                                <p class="middle_two_big_item_text">More off this less hello salamander lied porpoise
-                                    much over tightly circa horse taped so innocuously outside crud mightly
-                                    rigorous...</p>
-                                <p class="middle_two_big_item_read_more">Read more>></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }//конец while
+                wp_reset_postdata();
+            }//конец if
+            ?>
             <div class="col-lg-4 d-none d-lg-block">
                 <div id="bot_ads">
                     <div class="soc-wrap">

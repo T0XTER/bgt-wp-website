@@ -58,6 +58,20 @@ add_action( 'after_setup_theme', function () {
     ] );
 } );
 
+add_filter( 'excerpt_length', function(){
+    return 20;
+} );
+
+add_filter('excerpt_more', function($more) {
+    return '...';
+});
+
+/*add_filter( 'excerpt_more', 'new_excerpt_more' );
+function new_excerpt_more( $more ){
+    global $post;
+    return '<a href="'. get_permalink($post) . '">Read more>></a>';
+}*/
+
 add_filter( 'language_attributes', 'filter_function_name_5686', 10, 2 );
 function filter_function_name_5686( $output, $doctype ){
     // filter...

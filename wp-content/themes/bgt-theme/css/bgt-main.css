@@ -360,13 +360,13 @@ footer a:hover,
     z-index: 0;
 }
 
-#lama {
+/*#lama {
     background-image: url(../assets/images/Layer142.png);
 }
 
 #boat {
     background-image: url(../assets/images/Layer143.png);
-}
+}*/
 
 .top_two_big_item_tag {
     margin-bottom: 0;
@@ -432,7 +432,7 @@ footer a:hover,
     z-index: 0;
 }
 
-#pool {
+/*#pool {
     background-image: url(../assets/images/Layer144.png);
 }
 
@@ -450,7 +450,7 @@ footer a:hover,
 
 #aruba {
     background-image: url(../assets/images/Layer148.png);
-}
+}*/
 
 .middle_two_big_item {
     max-width: 480px;
