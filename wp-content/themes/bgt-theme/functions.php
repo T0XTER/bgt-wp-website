@@ -63,7 +63,9 @@ add_filter( 'excerpt_length', function(){
 } );
 
 add_filter('excerpt_more', function($more) {
-    return '...';
+    return '...
+    
+    Read more>>';
 });
 
 /*add_filter( 'excerpt_more', 'new_excerpt_more' );

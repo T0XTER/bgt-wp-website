@@ -6,82 +6,136 @@
             <div class="col-12 col-md-6 col-lg-4 widget-hot-1">
                 <div class="widget">
                     <h2 class="widget_title">HOT POSTS</h2>
+                    <?php
+                    // задаем нужные нам критерии выборки данных из БД
+                    $args8 = array(
+                        'tag' => 'hot-posts',
+                        'numberposts' => 2,
+                        'posts_per_page' => 2,
+                        'orderby' => 'date',
+                    );
+
+                    $query8 = new WP_Query($args8);
+
+                    // Цикл
+                    if ($query8->have_posts()) {
+                        while ($query8->have_posts()) {
+                        $query8->the_post();
+                    ?>
                     <article class="footer_widget_item">
                         <a href="">
                             <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="car"></div>
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="footer_widget_item_img img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="footer_widget_item_text">
-                                <p class="text-hover">10 Landscapes You Won`t Have Even Imagined Exist<?php the_title(); ?></p>
+                                <p class="text-hover"><?php the_title(); ?></p>
                                 <p><?php the_time('M j, Y'); ?></p>
                             </div>
                         </a>
                     </article>
-                    <article class="footer_widget_item">
-                        <a href="">
-                            <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="sea_view"></div>
-                            </div>
-                            <div class="footer_widget_item_text">
-                                <p class="text-hover">Decorating to Celebrate the Great Outdoor Space<?php the_title(); ?></p>
-                                <p><?php the_time('M j, Y'); ?></p>
-                            </div>
-                        </a>
-                    </article>
+                        <?php
+                        }//конец while
+                        wp_reset_postdata();
+                    }//конец if
+                    ?>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 col widget-hot-2">
                 <div class="widget">
                     <h2 class="widget_title">POPULAR POSTS</h2>
+                    <?php
+                    // задаем нужные нам критерии выборки данных из БД
+                    $args9 = array(
+                        'tag' => 'popular-posts',
+                        'numberposts' => 2,
+                        'posts_per_page' => 2,
+                        'orderby' => 'date',
+                    );
+
+                    $query9 = new WP_Query($args9);
+
+                    // Цикл
+                    if ($query9->have_posts()) {
+                    while ($query9->have_posts()) {
+                    $query9->the_post();
+                    ?>
                     <article class="footer_widget_item">
                         <a href="">
                             <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="footer_lama"></div>
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="footer_widget_item_img img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="footer_widget_item_text">
-                                <p class="text-hover">10 Landscapes You Won`t Have Even Imagined Exist<?php the_title(); ?></p>
+                                <p class="text-hover"><?php the_title(); ?></p>
                                 <p><?php the_time('M j, Y'); ?></p>
                             </div>
                         </a>
                     </article>
-                    <article class="footer_widget_item">
-                        <a href="">
-                            <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="mntn_tent"></div>
-                            </div>
-                            <div class="footer_widget_item_text">
-                                <p class="text-hover">Decorating to Celebrate the Great Outdoor Space<?php the_title(); ?></p>
-                                <p><?php the_time('M j, Y'); ?></p>
-                            </div>
-                        </a>
-                    </article>
+                        <?php
+                        }//конец while
+                        wp_reset_postdata();
+                    }//конец if
+                    ?>
                 </div>
             </div>
             <div class="col-lg-4 widget-hot-3">
                 <div class="widget">
                     <h2 class="widget_title">TRENDING NOW</h2>
+                    <?php
+                    // задаем нужные нам критерии выборки данных из БД
+                    $args10 = array(
+                        'tag' => 'trending-now',
+                        'numberposts' => 2,
+                        'posts_per_page' => 2,
+                        'orderby' => 'date',
+                    );
+
+                    $query10 = new WP_Query($args10);
+
+                    // Цикл
+                    if ($query10->have_posts()) {
+                    while ($query10->have_posts()) {
+                    $query10->the_post();
+                    ?>
                     <article class="footer_widget_item">
                         <a href="">
                             <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="footer_eur_architect"></div>
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="footer_widget_item_img img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="footer_widget_item_text">
-                                <p class="text-hover">10 Landscapes You Won`t Have Even Imagined Exist<?php the_title(); ?></p>
+                                <p class="text-hover"><?php the_title(); ?></p>
                                 <p><?php the_time('M j, Y'); ?></p>
                             </div>
                         </a>
                     </article>
-                    <article class="footer_widget_item">
-                        <a href="">
-                            <div class="footer_widget_item_img_wrap">
-                                <div class="footer_widget_item_img img-hover" id="girl_bridge"></div>
-                            </div>
-                            <div class="footer_widget_item_text">
-                                <p class="text-hover">Decorating to Celebrate the Great Outdoor Space<?php the_title(); ?></p>
-                                <p><?php the_time('M j, Y'); ?></p>
-                            </div>
-                        </a>
-                    </article>
+                        <?php
+                        }//конец while
+                        wp_reset_postdata();
+                    }//конец if
+                    ?>
                 </div>
             </div>
         </div>
@@ -142,15 +196,6 @@
                                         'walker'            => new WP_Bootstrap_Navwalker(),
                                     ) );
                                 ?>
-<!--                                <ul class="footer-menu-block list-inline d-flex justify-content-around">-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Terms of Service</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Privacy Policy</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">DMCA Policy</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Cookie Policy</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Contact Us</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Work With Us</a></li>-->
-<!--                                    <li class="footer-menu-item p-1 d-inline-block text-center"><a class="text-hover" href="#">Advertise With Us</a></li>-->
-<!--                                </ul>-->
                             </div>
                         </div>
                         <p class="footer-copy text-center">

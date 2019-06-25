@@ -360,14 +360,6 @@ footer a:hover,
     z-index: 0;
 }
 
-/*#lama {
-    background-image: url(../assets/images/Layer142.png);
-}
-
-#boat {
-    background-image: url(../assets/images/Layer143.png);
-}*/
-
 .top_two_big_item_tag {
     margin-bottom: 0;
     padding: 3px 10px 5px 14px;
@@ -402,6 +394,10 @@ footer a:hover,
     max-width: 480px;
 }
 
+.middle_five_small_block_wrap:nth-child(2n) {
+    display: none!important;
+}
+
 .middle_five_small_block_item {
     margin-bottom: 16px;
     flex: 0 0 47%;
@@ -432,26 +428,6 @@ footer a:hover,
     z-index: 0;
 }
 
-/*#pool {
-    background-image: url(../assets/images/Layer144.png);
-}
-
-#conversation {
-    background-image: url(../assets/images/Layer145.png);
-}
-
-#fountain {
-    background-image: url(../assets/images/Layer146.png);
-}
-
-#tropic_architect {
-    background-image: url(../assets/images/Layer147.png);
-}
-
-#aruba {
-    background-image: url(../assets/images/Layer148.png);
-}*/
-
 .middle_two_big_item {
     max-width: 480px;
     margin: 0 auto 55px auto;
@@ -481,13 +457,13 @@ footer a:hover,
     z-index: 0;
 }
 
-#bay {
+/*#bay {
     background-image: url(../assets/images/Layer150.png);
 }
 
 #eur_architect {
     background-image: url(../assets/images/Layer149.png);
-}
+}*/
 
 #WP_news_ad {
     width: 100%;
@@ -538,22 +514,6 @@ footer a:hover,
     background-size: cover;
     overflow: hidden;
     z-index: 0;
-}
-
-#bridge {
-    background-image: url(../assets/images/Layer151.png);
-}
-
-#fahwerk {
-    background-image: url(../assets/images/Layer152.png);
-}
-
-#lake {
-    background-image: url(../assets/images/Layer153.png);
-}
-
-#boys {
-    background-image: url(../assets/images/Layer154.png);
 }
 
 .bottom_block_left_item_header {
@@ -1050,6 +1010,10 @@ footer a:hover,
         max-width: 100%;
     }
 
+    .middle_five_small_block_wrap:nth-child(2n) {
+        display: block!important;
+    }
+
     .middle_five_small_block_item {
         flex: 0 0 18.5%;
         max-width: 18.5%;
@@ -1083,13 +1047,13 @@ footer a:hover,
         overflow: hidden;
     }
 
-    .woman_in_hat {
+    .bottom_block_right_item_image {
         width: 100%;
         height: 100%;
+        position: relative;
         background: center center no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
-        background-image: url(../assets/images/Layer155.png);
         overflow: hidden;
         z-index: 0;
     }
