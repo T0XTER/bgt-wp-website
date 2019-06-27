@@ -199,7 +199,7 @@
                             </div>
                         </div>
                         <p class="footer-copy text-center">
-                            <a class="text-hover" href="#">BigGlobalTravel 2017</a>
+                            <a class="text-hover" href="#">BigGlobalTravel <?php echo the_date('Y')?></a>
                         </p>
                     </div>
                 </div>

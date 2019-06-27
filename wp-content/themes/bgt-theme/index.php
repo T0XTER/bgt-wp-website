@@ -223,31 +223,30 @@
                     $query4->the_post();
             ?>
             <div class="col-12 col-lg-4 middle_two_big_block">
-                <div class="middle_two_big__block_wrap">
-                    <div class="middle_two_big_item">
-                        <a href="http://" class="middle_two_big_item_link">
-                            <div class="middle_two_big_img">
-                                <div class="middle_two_big_item_img_wrap">
-                                    <?php
-                                    $imageArray = get_post_thumbnail_id()
-                                        ? wp_get_attachment_image_src(get_post_thumbnail_id(), '325x181')
-                                        : [];
-                                    $imageSrc = array_key_exists(0, $imageArray)
-                                        ? $imageArray[0]
-                                        : '';
-                                    ?>
-                                    <div class="middle_two_big_item_img img-hover" id="bay" style="background-image: url('<?php echo $imageSrc ?>');"></div>
-                                </div>
+                <div class="middle_two_big_item">
+                    <a href="http://" class="middle_two_big_item_link">
+                        <div class="middle_two_big_img">
+                            <div class="middle_two_big_item_img_wrap">
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '325x181')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="middle_two_big_item_img img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
-                            <div class="middle_two_big_item_text_wrap">
-                                <p class="middle_two_big_cat">TRAVEL BLOG</p>
-                                <h2 class="middle_two_big_item_header text-hover">
-                                    <?php the_title(); ?>
-                                </h2>
-                                <p class="middle_two_big_item_text text-hover"><?php the_excerpt(); ?></p>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                        <div class="middle_two_big_item_text_wrap">
+                            <p class="middle_two_big_cat">TRAVEL BLOG</p>
+                            <h2 class="middle_two_big_item_header text-hover">
+                                <?php the_title(); ?>
+                            </h2>
+                            <p class="middle_two_big_item_text"><?php the_excerpt(); ?>
+                            <p class="text-hover">Read more>></p>
+                        </div>
+                    </a>
                 </div>
             </div>
                 <?php

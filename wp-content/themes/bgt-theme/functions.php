@@ -62,17 +62,9 @@ add_filter( 'excerpt_length', function(){
     return 20;
 } );
 
-add_filter('excerpt_more', function($more) {
-    return '...
-    
-    Read more>>';
+add_filter('excerpt_more', function() {
+    return '...';
 });
-
-/*add_filter( 'excerpt_more', 'new_excerpt_more' );
-function new_excerpt_more( $more ){
-    global $post;
-    return '<a href="'. get_permalink($post) . '">Read more>></a>';
-}*/
 
 add_filter( 'language_attributes', 'filter_function_name_5686', 10, 2 );
 function filter_function_name_5686( $output, $doctype ){
@@ -80,5 +72,9 @@ function filter_function_name_5686( $output, $doctype ){
 
     return $output;
 }
+
+remove_filter( 'the_excerpt', 'wpautop' );
+
+remove_filter( 'the_content', 'wpautop' );
 
 return apply_filters( 'language_attributes', $output, $doctype );

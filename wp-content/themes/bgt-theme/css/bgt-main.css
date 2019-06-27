@@ -37,9 +37,9 @@ a:hover {
     color: #e74c3c!important;
 }
 
-header a:hover,
-footer a:hover,
-.middle_two_big_item_link:hover {
+header a,
+footer a,
+.middle_two_big_item_link {
     color: #1c5379;
 }
 
@@ -394,10 +394,6 @@ footer a:hover,
     max-width: 480px;
 }
 
-.middle_five_small_block_wrap:nth-child(2n) {
-    display: none!important;
-}
-
 .middle_five_small_block_item {
     margin-bottom: 16px;
     flex: 0 0 47%;
@@ -437,6 +433,8 @@ footer a:hover,
 
 .middle_two_big_item_link {
     display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 .middle_two_big_item_img_wrap {
@@ -456,14 +454,6 @@ footer a:hover,
     overflow: hidden;
     z-index: 0;
 }
-
-/*#bay {
-    background-image: url(../assets/images/Layer150.png);
-}
-
-#eur_architect {
-    background-image: url(../assets/images/Layer149.png);
-}*/
 
 #WP_news_ad {
     width: 100%;
@@ -485,7 +475,7 @@ footer a:hover,
 }
 
 .middle_two_big_item_text {
-    color: #656565;
+    color: #656565!important;
 }
 
 .bottom_block_left_item {
@@ -649,30 +639,6 @@ footer a:hover,
     background-size: cover;
     position: relative;
     z-index: 0;
-}
-
-#car {
-    background-image: url(../assets/images/Layer103.png);
-}
-
-#sea_view {
-    background-image: url(../assets/images/Layer156.png);
-}
-
-#footer_lama {
-    background-image: url(../assets/images/Layer157.png);
-}
-
-#mntn_tent {
-    background-image: url(../assets/images/Layer158.png);
-}
-
-#footer_eur_architect {
-    background-image: url(../assets/images/Layer159.png);
-}
-
-#girl_bridge {
-    background-image: url(../assets/images/Layer160.png);
 }
 
 .footer_widget_item_text {
@@ -1008,10 +974,6 @@ footer a:hover,
         flex-wrap: nowrap;
         margin: 0 0;
         max-width: 100%;
-    }
-
-    .middle_five_small_block_wrap:nth-child(2n) {
-        display: block!important;
     }
 
     .middle_five_small_block_item {
