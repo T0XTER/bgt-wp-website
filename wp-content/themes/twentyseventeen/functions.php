@@ -582,11 +582,11 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10, 3 );
 
 /**
- * Use front-page.php when Front page displays is set to a static page.
+ * Use front-category-culture.php when Front page displays is set to a static page.
  *
  * @since Twenty Seventeen 1.0
  *
- * @param string $template front-page.php.
+ * @param string $template front-category-culture.php.
  *
  * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
  */

@@ -1023,7 +1023,7 @@
 					if ( options.data ) {
 						self.state.data = _.clone( options.data );
 
-						delete self.state.data.page;
+						delete self.state.data.category;
 					} else {
 						self.state.data = options.data = {};
 					}

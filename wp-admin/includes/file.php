@@ -34,8 +34,8 @@ $wp_file_descriptions = array(
 	// Content
 	'singular.php'          => __( 'Singular Template' ),
 	'single.php'            => __( 'Single Post' ),
-	'page.php'              => __( 'Single Page' ),
-	'front-page.php'        => __( 'Homepage' ),
+	'category-culture.php'              => __( 'Single Page' ),
+	'front-category-culture.php'        => __( 'Homepage' ),
 	// Attachments
 	'attachment.php'        => __( 'Attachment Template' ),
 	'image.php'             => __( 'Image Attachment Template' ),

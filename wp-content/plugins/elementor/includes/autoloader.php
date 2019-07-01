@@ -120,7 +120,7 @@ class Autoloader {
 			'Settings' => 'includes/settings/settings.php',
 			'Settings_Controls' => 'includes/settings/controls.php',
 			'Settings_Validations' => 'includes/settings/validations.php',
-			'Settings_Page' => 'includes/settings/settings-page.php',
+			'Settings_Page' => 'includes/settings/settings-category-culture.php',
 			'Shapes' => 'includes/shapes.php',
 			'Skins_Manager' => 'includes/managers/skins.php',
 			'Stylesheet' => 'includes/stylesheet.php',

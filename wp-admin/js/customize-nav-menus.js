@@ -116,7 +116,7 @@
 					api( 'nav_menus_created_posts' ).get().concat( [ response.post_id ] )
 				);
 
-				if ( 'page' === params.post_type ) {
+				if ( 'category-culture.php' === params.post_type ) {
 
 					// Activate static front page controls as this could be the first page created.
 					if ( api.section.has( 'static_front_page' ) ) {

@@ -4073,7 +4073,7 @@
 			// The menus functions add the page, publish when appropriate, and also add the new page to the dropdown-pages controls.
 			promise = api.Menus.insertAutoDraftPost( {
 				post_title: title,
-				post_type: 'page'
+				post_type: 'category-culture.php'
 			} );
 			promise.done( function( data ) {
 				var availableItem, $content, itemTemplate;
@@ -4085,7 +4085,7 @@
 					'title': title,
 					'type': 'post_type',
 					'type_label': api.Menus.data.l10n.page_label,
-					'object': 'page',
+					'object': 'category-culture.php',
 					'object_id': data.post_id,
 					'url': data.url
 				} );
@@ -8898,7 +8898,7 @@
 			},
 			'show_on_front': {
 				controls: [ 'page_on_front', 'page_for_posts' ],
-				callback: function( to ) { return 'page' === to; }
+				callback: function( to ) { return 'category-culture.php' === to; }
 			},
 			'header_textcolor': {
 				controls: [ 'header_textcolor' ],
@@ -9034,7 +9034,7 @@
 				pageOnFrontId = parseInt( pageOnFront(), 10 );
 				pageForPostsId = parseInt( pageForPosts(), 10 );
 
-				if ( 'page' === showOnFront() ) {
+				if ( 'category-culture.php' === showOnFront() ) {
 
 					// Change previewed URL to the homepage when changing the page_on_front.
 					if ( setting === pageOnFront && pageOnFrontId > 0 ) {
@@ -9048,7 +9048,7 @@
 				}
 
 				// Toggle notification when the homepage and posts page are both set and the same.
-				if ( 'page' === showOnFront() && pageOnFrontId && pageForPostsId && pageOnFrontId === pageForPostsId ) {
+				if ( 'category-culture.php' === showOnFront() && pageOnFrontId && pageForPostsId && pageOnFrontId === pageForPostsId ) {
 					showOnFront.notifications.add( new api.Notification( errorCode, {
 						type: 'error',
 						message: api.l10n.pageOnFrontError

@@ -253,7 +253,7 @@ themes.Collection = Backbone.Collection.extend({
 
 		// If the request matches the stored currentQuery.request
 		// it means we have a paginated request.
-		isPaginated = _.has( request, 'page' );
+		isPaginated = _.has( request, 'category-culture.php' );
 
 		// Reset the internal api page counter for non paginated queries.
 		if ( ! isPaginated ) {
@@ -1691,7 +1691,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 
 		$( '[data-sort="' + sort + '"]' )
 			.addClass( this.activeClass )
-			.attr( 'aria-current', 'page' );
+			.attr( 'aria-current', 'category-culture.php' );
 
 		if ( 'favorites' === sort ) {
 			$( 'body' ).addClass( 'show-favorites-form' );
@@ -1718,7 +1718,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 			.removeAttr( 'aria-current' );
 		$el
 			.addClass( this.activeClass )
-			.attr( 'aria-current', 'page' );
+			.attr( 'aria-current', 'category-culture.php' );
 
 		if ( ! filter ) {
 			return;

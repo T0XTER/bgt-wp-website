@@ -60,8 +60,8 @@
 					.attr( 'aria-expanded', ariaExpandedValue );
 			}
 
-			if ( postboxes.page !== 'press-this' ) {
-				postboxes.save_state( postboxes.page );
+			if ( postboxes.category !== 'press-this' ) {
+				postboxes.save_state( postboxes.category );
 			}
 
 			if ( id ) {

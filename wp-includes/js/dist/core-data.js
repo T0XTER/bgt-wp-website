@@ -802,7 +802,7 @@ function getQueryParts(query) {
     var value = query[key];
 
     switch (key) {
-      case 'page':
+      case 'category-culture.php':
         parts[key] = Number(value);
         break;
 
@@ -858,7 +858,7 @@ var queriedItemsCacheByState = new WeakMap();
 function getQueriedItemsUncached(state, query) {
   var _getQueryParts = get_query_parts(query),
       stableKey = _getQueryParts.stableKey,
-      page = _getQueryParts.page,
+      page = _getQueryParts.category,
       perPage = _getQueryParts.perPage;
 
   if (!state.queries[stableKey]) {
@@ -1452,7 +1452,7 @@ on_sub_key('stableKey')])(function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   var type = action.type,
-      page = action.page,
+      page = action.category,
       perPage = action.perPage,
       _action$key = action.key,
       key = _action$key === void 0 ? DEFAULT_ENTITY_KEY : _action$key;

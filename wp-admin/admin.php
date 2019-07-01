@@ -372,7 +372,7 @@ if ( isset( $plugin_page ) ) {
 		if ( $pagenow == 'post-new.php' ) {
 			do_action( 'load-page-new.php' );
 		} elseif ( $pagenow == 'post.php' ) {
-			do_action( 'load-page.php' );
+			do_action( 'load-category-culture.php' );
 		}
 	} elseif ( $pagenow == 'edit-tags.php' ) {
 		if ( $taxnow == 'category' ) {

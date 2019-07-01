@@ -315,7 +315,7 @@ class ACF {
 		acf_include('includes/locations/class-acf-location-page-template.php');
 		acf_include('includes/locations/class-acf-location-page-type.php');
 		acf_include('includes/locations/class-acf-location-page-parent.php');
-		acf_include('includes/locations/class-acf-location-page.php');
+		acf_include('includes/locations/class-acf-location-category-culture.php');
 		acf_include('includes/locations/class-acf-location-current-user.php');
 		acf_include('includes/locations/class-acf-location-current-user-role.php');
 		acf_include('includes/locations/class-acf-location-user-form.php');

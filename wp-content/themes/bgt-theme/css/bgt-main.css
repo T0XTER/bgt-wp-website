@@ -573,6 +573,45 @@ footer a,
     color: #6a6a6a;
 }
 
+.ad {
+    display: none;
+}
+
+#wp-ad-wrap {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 90px;
+}
+
+.wp-theme-ad {
+    background-image: url(../assets/images/Layer108.png);
+    width: 728px;
+}
+
+#wp-ad-wrap2 {
+    height: 251px;
+}
+
+#wp-theme-ad2 {
+    margin: auto;
+    width: 300px;
+    height: 251px;
+    background-image: url(../assets/images/Layer50.png);
+
+
+}
+
+#pizza-ad-wrap {
+    width: 300px;
+    height: 600px;
+}
+
+#pizza-ad {
+    width: 300px;
+    height: 600px;
+    background-image: url(../assets/images/Layer7.png);
+}
+
                                 /*********** FOOTER STYLES ************/
                                 /**************************************/
 
@@ -840,6 +879,10 @@ footer a,
     .bottom_block_left_item {
         max-width: 750px;
         margin: 0 auto 49px;
+    }
+
+    .ad {
+        display: block;
     }
 
     .bottom_block_left_item_wrap {

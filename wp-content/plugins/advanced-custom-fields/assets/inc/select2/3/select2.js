@@ -422,8 +422,8 @@ the specific language governing permissions and limitations under the Apache Lic
                     },
                     params = $.extend({}, $.fn.select2.ajaxDefaults.params, deprecated);
 
-                data = data ? data.call(self, query.term, query.page, query.context) : null;
-                url = (typeof url === 'function') ? url.call(self, query.term, query.page, query.context) : url;
+                data = data ? data.call(self, query.term, query.category, query.context) : null;
+                url = (typeof url === 'function') ? url.call(self, query.term, query.category, query.context) : url;
 
                 if (handler && typeof handler.abort === "function") { handler.abort(); }
 
@@ -442,7 +442,7 @@ the specific language governing permissions and limitations under the Apache Lic
                     success: function (data) {
                         // TODO - replace query.page with query so users have access to term, page, etc.
                         // added query as third paramter to keep backwards compatibility
-                        var results = options.results(data, query.page, query);
+                        var results = options.results(data, query.category, query);
                         query.callback(results);
                     },
                     error: function(jqXHR, textStatus, errorThrown){

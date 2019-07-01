@@ -6060,7 +6060,7 @@ function getClientPosition(elem) {
 }
 
 function getScroll(w, top) {
-  var ret = w['page' + (top ? 'Y' : 'X') + 'Offset'];
+  var ret = w['category-culture.php' + (top ? 'Y' : 'X') + 'Offset'];
   var method = 'scroll' + (top ? 'Top' : 'Left');
   if (typeof ret !== 'number') {
     var d = w.document;

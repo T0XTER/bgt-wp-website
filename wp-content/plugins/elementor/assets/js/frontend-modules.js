@@ -146,7 +146,7 @@ var _class = function (_elementorModules$Vie) {
 			if (this.isEdit) {
 				elementSettings = {};
 
-				var settings = elementor.settings.page.model;
+				var settings = elementor.settings.category.model;
 
 				jQuery.each(settings.getActiveControls(), function (controlKey) {
 					elementSettings[controlKey] = settings.attributes[controlKey];
@@ -174,7 +174,7 @@ var _class = function (_elementorModules$Vie) {
 			this.isEdit = this.$element.hasClass(this.getSettings('classes.editMode'));
 
 			if (this.isEdit) {
-				elementor.settings.page.model.on('change', this.onSettingsChange.bind(this));
+				elementor.settings.category.model.on('change', this.onSettingsChange.bind(this));
 			} else {
 				this.runElementsHandlers();
 			}
@@ -513,7 +513,7 @@ module.exports = elementorModules.ViewModule.extend({
 			});
 		}
 
-		['page', 'general'].forEach(function (settingsType) {
+		['category-culture.php', 'general'].forEach(function (settingsType) {
 			var listenerMethodName = 'on' + settingsType[0].toUpperCase() + settingsType.slice(1) + 'SettingsChange';
 
 			if (self[listenerMethodName]) {

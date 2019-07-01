@@ -2005,7 +2005,7 @@ var effects = {
     setTimeout(function () {
       var postType = Object(external_this_wp_data_["select"])('core/editor').getCurrentPostType();
 
-      if (window.postboxes.page !== postType) {
+      if (window.postboxes.category !== postType) {
         window.postboxes.add_postbox_toggles(postType);
       }
     });

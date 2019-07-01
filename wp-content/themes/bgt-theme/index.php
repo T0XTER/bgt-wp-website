@@ -6,7 +6,7 @@
                 <?php
                 // задаем нужные нам критерии выборки данных из БД
                 $args = array(
-                        'posts_per_page' => '1',
+                    'posts_per_page' => '1',
                     'orderby' => 'date'
                 );
 
@@ -414,7 +414,7 @@
                                                 ? $imageArray[0]
                                                 : '';
                                             ?>
-                                            <div class="bottom_block_right_item_image img-hover" style="background-image: url('<?php echo $imageSrc ?>'); height: 100%;"></div>
+                                            <div class="bottom_block_right_item_image img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                                         </div>
                                         <div class="bottom_block_right_item_text_wrap">
                                             <div class="bottom_block_right_item_header">

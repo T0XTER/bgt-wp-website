@@ -17,12 +17,10 @@
                     );
 
                     $query5 = new WP_Query($args5);
-                    $ids = [];
                     // Цикл
                     if ($query5->have_posts()) {
                         while ($query5->have_posts()) {
                             $query5->the_post();
-                            $ids[] = get_the_ID();
                     ?>
                     <article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
@@ -54,88 +52,42 @@
                         }//конец while
                     }//конец if
                     ?>
-                    <!--<article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover fahwerk"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover lake"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover boys"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>-->
-                    <div class="bottom_block_left_item">
+                    <div class="bottom_block_left_item ad">
                         <div class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_left_item_image wp-theme-ad"></div>
+                            <div class="bottom_block_left_images_wrap" id="wp-ad-wrap">
+                                <div class="bottom_block_left_item_image wp-theme-ad"></div>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    // задаем нужные нам критерии выборки данных из БД
+                    $args5 = array(
+                        'tag' => 'culture',
+                        'numberposts' => 4,
+                        'posts_per_page' => 4,
+                        'orderby' => 'date',
+                    );
+
+                    $query5 = new WP_Query($args5);
+                    $ids = [];
+                    // Цикл
+                    if ($query5->have_posts()) {
+                        while ($query5->have_posts()) {
+                            $query5->the_post();
+                            $ids[] = get_the_ID();
+                            ?>
                     <article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <?php
-                                // задаем нужные нам критерии выборки данных из БД
-                                $args5 = array(
-                                    'tag' => 'culture',
-                                    'numberposts' => 4,
-                                    'posts_per_page' => 4,
-                                    'orderby' => 'date',
-                                );
-
-                                $query5 = new WP_Query($args5);
-                                $ids = [];
-                                // Цикл
-                                if ($query5->have_posts()) {
-                                    while ($query5->have_posts()) {
-                                        $query5->the_post();
-                                        $ids[] = get_the_ID();
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '250x185')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
                                 ?>
-                                <div class="bottom_block_left_item_image img-hover bridge"></div>
+                                <div class="bottom_block_left_item_image img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="bottom_block_left_item_text_wrap">
                                 <div class="bottom_block_left_item_header">
@@ -154,60 +106,6 @@
                         }//конец while
                     }//конец if
                     ?>
-                   <!-- <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover fahwerk"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover lake"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
-                            <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover boys"></div>
-                            </div>
-                            <div class="bottom_block_left_item_text_wrap">
-                                <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
-                                </div>
-                                <div class="bottom_block_left_item_meta">
-                                    <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
-                                    <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>-->
                 </div>
             </div>
             <div class="col-12 col-lg-4 bottom_block_right">
@@ -215,87 +113,111 @@
                     <div class="bottom_block_right_ad">
                         <div class="bottom_block_right_item">
                             <a class="bottom_block_right_item_wrap">
-                                <div class="bottom_block_right_item_images_wrap">
-                                    <div class="bottom_block_right_item_image wp-theme-ad2"></div>
+                                <div class="bottom_block_right_item_images_wrap" id="wp-ad-wrap2">
+                                    <div class="bottom_block_right_item_image" id="wp-theme-ad2"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="bottom_block_right_img">
+                        <?php
+                        $ids2 = [];
+                        // задаем нужные нам критерии выборки данных из БД
+                        $args7 = array(
+                            'tag' => 'culture',
+                            'numberposts' => 1,
+                            'posts_per_page' => 1,
+                            'orderby' => 'date',
+                            'post__not_in' => $ids
+                        );
+
+                        $query7 = new WP_Query($args7);
+
+                        // Цикл
+                        if ($query7->have_posts()) {
+                            while ($query7->have_posts()) {
+                                $query7->the_post();
+                                $ids2[] = get_the_ID();
+                        ?>
                         <article class="bottom_block_right_item">
                             <a class="bottom_block_right_item_wrap">
                                 <div class="bottom_block_right_item_images_wrap">
-                                    <div class="bottom_block_right_item_image woman_in_hat img-hover"></div>
+                                    <?php
+                                    $imageArray = get_post_thumbnail_id()
+                                        ? wp_get_attachment_image_src(get_post_thumbnail_id(), '370x339')
+                                        : [];
+                                    $imageSrc = array_key_exists(0, $imageArray)
+                                        ? $imageArray[0]
+                                        : '';
+                                    ?>
+                                    <div class="bottom_block_right_item_image img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                                 </div>
                                 <div class="bottom_block_right_item_text_wrap">
                                     <div class="bottom_block_right_item_header">
-                                        <h2 class="text-hover">Pedal power sees Amy complete World toughest challenge</h2>
+                                        <h2 class="text-hover"><?php  the_title(); ?></h2>
                                     </div>
                                     <div class="bottom_block_right_item_meta">
                                         <span class="bottom_block_right_item_cat">TRAVEL</span>
-                                        <span class="bottom_block_right_item_author">MATT CLOEY</span>
+                                        <span class="bottom_block_right_item_author"><?php the_author(); ?></span>
                                         <span>-</span>
-                                        <span class="bottom_block_right_item_date">May 8, 2017</span>
+                                        <span class="bottom_block_right_item_date"><?php the_time('M j, Y'); ?></span>
                                     </div>
                                 </div>
                             </a>
                         </article>
+                        <?php
+                            }//конец while
+                            wp_reset_postdata();
+                        }//конец if
+                        ?>
                     </div>
                     <div class="bottom_block_right_ad">
                         <div class="bottom_block_right_item">
                             <a class="bottom_block_right_item_wrap">
-                                <div class="bottom_block_right_item_images_wrap">
-                                    <div class="bottom_block_right_item_image pizza-ad"></div>
+                                <div class="bottom_block_right_item_images_wrap" id="pizza-ad-wrap">
+                                    <div class="bottom_block_right_item_image" id="pizza-ad"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="bottom_block_right_no_img">
+                        <?php
+                        // задаем нужные нам критерии выборки данных из БД
+                        $ids3 = [];
+                        $ids3 = array_merge($ids, $ids2);
+                        $args6 = array(
+                            'tag' => 'culture',
+                            'numberposts' => 3,
+                            'posts_per_page' => 3,
+                            'orderby' => 'date',
+                            'post__not_in' => $ids3
+                        );
+
+                        $query6 = new WP_Query($args6);
+                        // Цикл
+                        if ($query6->have_posts()) {
+                        while ($query6->have_posts()) {
+                        $query6->the_post();
+                        ?>
                         <article class="bottom_block_right_no_img_item">
                             <a class="bottom_block_right_no_img_item_wrap">
                                 <div class="bottom_block_right_no_img_item_text_wrap">
                                     <div class="bottom_block_right_no_img_item_header">
-                                        <h2 class="text-hover">Pedal power sees Amy complete World toughest challenge</h2>
+                                        <h2 class="text-hover"><?php the_title(); ?></h2>
                                     </div>
                                     <div class="bottom_block_right_item_meta">
                                         <span class="bottom_block_right_item_cat">FUN!</span>
-                                        <span class="bottom_block_right_item_author">MATT CLOEY</span>
+                                        <span class="bottom_block_right_item_author"><?php the_author(); ?></span>
                                         <span>-</span>
-                                        <span class="bottom_block_right_item_date">May 8, 2017</span>
+                                        <span class="bottom_block_right_item_date"><?php the_time('M j, Y'); ?></span>
                                     </div>
                                 </div>
                             </a>
                         </article>
-                        <article class="bottom_block_right_no_img_item">
-                            <a class="bottom_block_right_no_img_item_wrap">
-                                <div class="bottom_block_right_no_img_item_text_wrap">
-                                    <div class="bottom_block_right_no_img_item_header">
-                                        <h2 class="text-hover">Pedal power sees Amy complete World toughest challenge</h2>
-                                    </div>
-                                    <div class="bottom_block_right_item_meta">
-                                        <span class="bottom_block_right_item_cat">TRIP TIPS</span>
-                                        <span class="bottom_block_right_item_author">MATT CLOEY</span>
-                                        <span>-</span>
-                                        <span class="bottom_block_right_item_date">May 8, 2017</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="bottom_block_right_no_img_item">
-                            <a class="bottom_block_right_no_img_item_wrap">
-                                <div class="bottom_block_right_no_img_item_text_wrap">
-                                    <div class="bottom_block_right_no_img_item_header">
-                                        <h2 class="text-hover">Pedal power sees Amy complete World toughest challenge</h2>
-                                    </div>
-                                    <div class="bottom_block_right_item_meta">
-                                        <span class="bottom_block_right_item_cat">CULTURE</span>
-                                        <span class="bottom_block_right_item_author">MATT CLOEY</span>
-                                        <span>-</span>
-                                        <span class="bottom_block_right_item_date">May 8, 2017</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
+                        <?php
+                            }//конец while
+                        }//конец if
+                        ?>
                     </div>
                 </div>
             </div>

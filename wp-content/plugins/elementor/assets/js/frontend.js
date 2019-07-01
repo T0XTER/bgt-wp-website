@@ -640,7 +640,7 @@ var _class = function (_elementorModules$Vie) {
 			if (this.isEdit) {
 				elementSettings = {};
 
-				var settings = elementor.settings.page.model;
+				var settings = elementor.settings.category.model;
 
 				jQuery.each(settings.getActiveControls(), function (controlKey) {
 					elementSettings[controlKey] = settings.attributes[controlKey];
@@ -668,7 +668,7 @@ var _class = function (_elementorModules$Vie) {
 			this.isEdit = this.$element.hasClass(this.getSettings('classes.editMode'));
 
 			if (this.isEdit) {
-				elementor.settings.page.model.on('change', this.onSettingsChange.bind(this));
+				elementor.settings.category.model.on('change', this.onSettingsChange.bind(this));
 			} else {
 				this.runElementsHandlers();
 			}
@@ -938,7 +938,7 @@ var Frontend = function (_elementorModules$Vie) {
 	}, {
 		key: 'getPageSettings',
 		value: function getPageSettings(settingName) {
-			var settingsObject = this.isEditMode() ? elementor.settings.page.model.attributes : this.config.settings.page;
+			var settingsObject = this.isEditMode() ? elementor.settings.category.model.attributes : this.config.settings.category;
 
 			return this.getItems(settingsObject, settingName);
 		}

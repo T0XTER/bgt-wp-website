@@ -136,7 +136,7 @@
 
 	// Add 'below-entry-meta' class to elements.
 	function belowEntryMetaClass( param ) {
-		if ( body.hasClass( 'page' ) || body.hasClass( 'search' ) || body.hasClass( 'single-attachment' ) || body.hasClass( 'error404' ) ) {
+		if ( body.hasClass( 'category-culture.php' ) || body.hasClass( 'search' ) || body.hasClass( 'single-attachment' ) || body.hasClass( 'error404' ) ) {
 			return;
 		}
 

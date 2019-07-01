@@ -11473,7 +11473,7 @@
 			var ajaxData = {
 				action: 	this.get('ajaxAction'),
 				s: 			params.term || '',
-				paged: 		params.page || 1
+				paged: 		params.category || 1
 			};
 			
 			// field helper

@@ -2488,7 +2488,7 @@ module.exports = elementorModules.ViewModule.extend({
 		var menuItemOptions = {
 			icon: menuSettings.icon,
 			title: this.getSettings('panelPage.title'),
-			type: 'page',
+			type: 'category-culture.php',
 			pageName: this.getSettings('name') + '_settings'
 		};
 
@@ -9053,7 +9053,7 @@ TemplateLibraryManager = function TemplateLibraryManager() {
 			}
 		};
 
-		_.each(['page', 'section', elementor.config.document.type], function (type) {
+		_.each(['category-culture.php', 'section', elementor.config.document.type], function (type) {
 			var safeData = jQuery.extend(true, {}, data, {
 				saveDialog: {
 					title: elementor.translate('save_your_template', [elementor.translate(type)])
@@ -9074,7 +9074,7 @@ TemplateLibraryManager = function TemplateLibraryManager() {
 			name: 'pages',
 			source: 'remote',
 			title: elementor.translate('pages'),
-			type: 'page'
+			type: 'category-culture.php'
 		}, {
 			name: 'my-templates',
 			source: 'local',
@@ -9184,7 +9184,7 @@ TemplateLibraryManager = function TemplateLibraryManager() {
 				elementor.channels.data.trigger('template:after:insert', templateModel);
 
 				if (options.withPageSettings) {
-					elementor.settings.page.model.setExternalChange(data.page_settings);
+					elementor.settings.category.model.setExternalChange(data.page_settings);
 				}
 			},
 			error: function error(data) {
@@ -9343,7 +9343,7 @@ TemplateLibraryManager = function TemplateLibraryManager() {
 					filters: {
 						source: 'remote',
 						type: remoteLibraryConfig.type,
-						subtype: 'page' === remoteLibraryConfig.type ? null : remoteLibraryConfig.category
+						subtype: 'category-culture.php' === remoteLibraryConfig.type ? null : remoteLibraryConfig.category
 					},
 					onReady: self.showTemplates
 				}, customStartIntent);
@@ -9882,7 +9882,7 @@ TemplateLibraryCollectionView = Marionette.CompositeView.extend({
 
 		this.toggleFilterClass();
 
-		if ('remote' === elementor.templates.getFilter('source') && 'page' !== elementor.templates.getFilter('type')) {
+		if ('remote' === elementor.templates.getFilter('source') && 'category-culture.php' !== elementor.templates.getFilter('type')) {
 			this.setFiltersUI();
 
 			this.setMasonrySkin();
@@ -10108,7 +10108,7 @@ TemplateLibrarySaveTemplateView = Marionette.ItemView.extend({
 		} else if (elementor.config.document.library && elementor.config.document.library.save_as_same_type) {
 			type = elementor.config.document.type;
 		} else {
-			type = 'page';
+			type = 'category-culture.php';
 		}
 
 		return type;
@@ -10650,7 +10650,7 @@ module.exports = Marionette.CompositeView.extend({
 		this.jqueryXhr = elementor.history.revisions.getRevisionDataAsync(revisionView.model.get('id'), {
 			success: function success(data) {
 				elementor.history.revisions.setEditorData(data.elements);
-				elementor.settings.page.model.set(data.settings);
+				elementor.settings.category.model.set(data.settings);
 
 				self.setRevisionsButtonsActive(true);
 
@@ -12613,20 +12613,20 @@ module.exports = Marionette.Behavior.extend({
 	initialize: function initialize() {
 		elementor.saver.on('before:save', this.onBeforeSave.bind(this)).on('after:save', this.onAfterSave.bind(this)).on('after:saveError', this.onAfterSaveError.bind(this)).on('page:status:change', this.onPageStatusChange);
 
-		elementor.settings.page.model.on('change', this.onPageSettingsChange.bind(this));
+		elementor.settings.category.model.on('change', this.onPageSettingsChange.bind(this));
 
 		elementor.channels.editor.on('status:change', this.activateSaveButtons.bind(this));
 	},
 
 	activateSaveButtons: function activateSaveButtons(hasChanges) {
-		hasChanges = hasChanges || 'draft' === elementor.settings.page.model.get('post_status');
+		hasChanges = hasChanges || 'draft' === elementor.settings.category.model.get('post_status');
 
 		this.ui.buttonPublish.add(this.ui.menuSaveDraft).toggleClass('elementor-disabled', !hasChanges);
 		this.ui.buttonSaveOptions.toggleClass('elementor-disabled', !hasChanges);
 	},
 
 	onRender: function onRender() {
-		this.setMenuItems(elementor.settings.page.model.get('post_status'));
+		this.setMenuItems(elementor.settings.category.model.get('post_status'));
 		this.addTooltip();
 	},
 
@@ -15714,19 +15714,19 @@ PanelMenuPageView = Marionette.CompositeView.extend({
 					name: 'global-colors',
 					icon: 'fa fa-paint-brush',
 					title: elementor.translate('global_colors'),
-					type: 'page',
+					type: 'category-culture.php',
 					pageName: 'colorScheme'
 				}, {
 					name: 'global-fonts',
 					icon: 'fa fa-font',
 					title: elementor.translate('global_fonts'),
-					type: 'page',
+					type: 'category-culture.php',
 					pageName: 'typographyScheme'
 				}, {
 					name: 'color-picker',
 					icon: 'fa fa-eyedropper',
 					title: elementor.translate('color_picker'),
-					type: 'page',
+					type: 'category-culture.php',
 					pageName: 'colorPickerScheme'
 				}]
 			}, {
@@ -15813,7 +15813,7 @@ module.exports = Marionette.CompositeView.extend({
 		var menuItemType = childView.model.get('type');
 
 		switch (menuItemType) {
-			case 'page':
+			case 'category-culture.php':
 				var pageName = childView.model.get('pageName'),
 				    pageTitle = childView.model.get('title');
 
@@ -16133,11 +16133,11 @@ module.exports = BaseSettings.extend({
 	changeCallbacks: {
 		elementor_page_title_selector: function elementor_page_title_selector(newValue) {
 			var newSelector = newValue || 'h1.entry-title',
-			    titleSelectors = elementor.settings.page.model.controls.hide_title.selectors = {};
+			    titleSelectors = elementor.settings.category.model.controls.hide_title.selectors = {};
 
 			titleSelectors[newSelector] = 'display: none';
 
-			elementor.settings.page.updateStylesheet();
+			elementor.settings.category.updateStylesheet();
 		}
 	}
 });
@@ -16243,7 +16243,7 @@ module.exports = elementorModules.Module.extend({
 	},
 
 	saveDraft: function saveDraft() {
-		var postStatus = elementor.settings.page.model.get('post_status');
+		var postStatus = elementor.settings.category.model.get('post_status');
 
 		if (!elementor.saver.isEditorChanged() && 'draft' !== postStatus) {
 			return;
@@ -16303,7 +16303,7 @@ module.exports = elementorModules.Module.extend({
 
 	update: function update(options) {
 		options = _.extend({
-			status: elementor.settings.page.model.get('post_status')
+			status: elementor.settings.category.model.get('post_status')
 		}, options);
 
 		this.saveEditor(options);
@@ -16341,7 +16341,7 @@ module.exports = elementorModules.Module.extend({
 	},
 
 	defaultSave: function defaultSave() {
-		var postStatus = elementor.settings.page.model.get('post_status');
+		var postStatus = elementor.settings.category.model.get('post_status');
 
 		switch (postStatus) {
 			case 'publish':
@@ -16381,8 +16381,8 @@ module.exports = elementorModules.Module.extend({
 
 		var self = this,
 		    elements = elementor.elements.toJSON({ remove: ['default', 'editSettings', 'defaultEditSettings'] }),
-		    settings = elementor.settings.page.model.toJSON({ remove: ['default'] }),
-		    oldStatus = elementor.settings.page.model.get('post_status'),
+		    settings = elementor.settings.category.model.toJSON({ remove: ['default'] }),
+		    oldStatus = elementor.settings.category.model.get('post_status'),
 		    statusChanged = oldStatus !== options.status;
 
 		self.trigger('before:save', options).trigger('before:save:' + options.status, options);
@@ -16405,7 +16405,7 @@ module.exports = elementorModules.Module.extend({
 
 				if ('autosave' !== options.status) {
 					if (statusChanged) {
-						elementor.settings.page.model.set('post_status', options.status);
+						elementor.settings.category.model.set('post_status', options.status);
 					}
 
 					// Notice: Must be after update page.model.post_status to the new status.

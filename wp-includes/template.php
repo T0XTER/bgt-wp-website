@@ -371,7 +371,7 @@ function get_home_template() {
  * @return string Full path to front page template file.
  */
 function get_front_page_template() {
-	$templates = array( 'front-page.php' );
+	$templates = array( 'front-category-culture.php' );
 
 	return get_query_template( 'front_page', $templates );
 }
@@ -384,14 +384,14 @@ function get_front_page_template() {
  * 1. {Page Template}.php
  * 2. page-{page_name}.php
  * 3. page-{id}.php
- * 4. page.php
+ * 4. category-culture.php
  *
  * An example of this is:
  *
  * 1. page-templates/full-width.php
  * 2. page-about.php
  * 3. page-4.php
- * 4. page.php
+ * 4. category-culture.php
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'page'.
@@ -431,7 +431,7 @@ function get_page_template() {
 	if ( $id ) {
 		$templates[] = "page-{$id}.php";
 	}
-	$templates[] = 'page.php';
+	$templates[] = 'category-culture.php';
 
 	return get_query_template( 'page', $templates );
 }

@@ -714,7 +714,7 @@
 		},
 		process: function( results, params ) {
 			var list = '', alt = true, classes = '',
-				firstPage = params.page == 1;
+				firstPage = params.category == 1;
 
 			if ( ! results ) {
 				if ( firstPage ) {

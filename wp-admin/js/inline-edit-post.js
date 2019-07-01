@@ -41,7 +41,7 @@ window.wp = window.wp || {};
 	init : function(){
 		var t = this, qeRow = $('#inline-edit'), bulkRow = $('#bulk-edit');
 
-		t.type = $('table.widefat').hasClass('pages') ? 'page' : 'post';
+		t.type = $('table.widefat').hasClass('pages') ? 'category-culture.php' : 'post';
 		// Post id prefix.
 		t.what = '#post-';
 
@@ -258,7 +258,7 @@ window.wp = window.wp || {};
 		}
 
 		fields = ['post_title', 'post_name', 'post_author', '_status', 'jj', 'mm', 'aa', 'hh', 'mn', 'ss', 'post_password', 'post_format', 'menu_order', 'page_template'];
-		if ( t.type === 'page' ) {
+		if ( t.type === 'category-culture.php' ) {
 			fields.push('post_parent');
 		}
 
