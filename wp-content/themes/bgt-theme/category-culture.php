@@ -7,25 +7,54 @@
         <div class="row">
             <div class="col-12 col-lg-8 bottom_block_left">
                 <div class="bottom_block_left_wrap">
+                    <?php
+                    // задаем нужные нам критерии выборки данных из БД
+                    $args5 = array(
+                        'tag' => 'culture',
+                        'numberposts' => 4,
+                        'posts_per_page' => 4,
+                        'orderby' => 'date',
+                    );
+
+                    $query5 = new WP_Query($args5);
+                    $ids = [];
+                    // Цикл
+                    if ($query5->have_posts()) {
+                        while ($query5->have_posts()) {
+                            $query5->the_post();
+                            $ids[] = get_the_ID();
+                    ?>
                     <article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
-                                <div class="bottom_block_left_item_image img-hover bridge"></div>
+                                <?php
+                                $imageArray = get_post_thumbnail_id()
+                                    ? wp_get_attachment_image_src(get_post_thumbnail_id(), '250x185')
+                                    : [];
+                                $imageSrc = array_key_exists(0, $imageArray)
+                                    ? $imageArray[0]
+                                    : '';
+                                ?>
+                                <div class="bottom_block_left_item_image img-hover" style="background-image: url('<?php echo $imageSrc ?>');"></div>
                             </div>
                             <div class="bottom_block_left_item_text_wrap">
                                 <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
+                                    <h2 class="text-hover"><?php the_title(); ?></h2>
                                 </div>
                                 <div class="bottom_block_left_item_meta">
                                     <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
+                                    <span class="bottom_block_left_item_meta_author"><?php the_author(); ?></span>
                                     <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
+                                    <span class="bottom_block_left_item_meta_date"><?php the_time('M j, Y'); ?></span>
                                 </div>
                             </div>
                         </a>
                     </article>
-                    <article class="bottom_block_left_item">
+                    <?php
+                        }//конец while
+                    }//конец if
+                    ?>
+                    <!--<article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover fahwerk"></div>
@@ -78,7 +107,7 @@
                                 </div>
                             </div>
                         </a>
-                    </article>
+                    </article>-->
                     <div class="bottom_block_left_item">
                         <div class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
@@ -89,22 +118,43 @@
                     <article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
+                                <?php
+                                // задаем нужные нам критерии выборки данных из БД
+                                $args5 = array(
+                                    'tag' => 'culture',
+                                    'numberposts' => 4,
+                                    'posts_per_page' => 4,
+                                    'orderby' => 'date',
+                                );
+
+                                $query5 = new WP_Query($args5);
+                                $ids = [];
+                                // Цикл
+                                if ($query5->have_posts()) {
+                                    while ($query5->have_posts()) {
+                                        $query5->the_post();
+                                        $ids[] = get_the_ID();
+                                ?>
                                 <div class="bottom_block_left_item_image img-hover bridge"></div>
                             </div>
                             <div class="bottom_block_left_item_text_wrap">
                                 <div class="bottom_block_left_item_header">
-                                    <h2 class="text-hover">Hard time ahead for Hodgson as England start Euro 2017</h2>
+                                    <h2 class="text-hover"><?php the_title(); ?></h2>
                                 </div>
                                 <div class="bottom_block_left_item_meta">
                                     <span class="bottom_block_left_item_meta_cat">WORLD WIDE</span>
-                                    <span class="bottom_block_left_item_meta_author">MATT CLOEY</span>
+                                    <span class="bottom_block_left_item_meta_author"><?php the_author(); ?></span>
                                     <span>-</span>
-                                    <span class="bottom_block_left_item_meta_date">MAY 8, 2017</span>
+                                    <span class="bottom_block_left_item_meta_date"><?php the_time('M j, Y'); ?></span>
                                 </div>
                             </div>
                         </a>
                     </article>
-                    <article class="bottom_block_left_item">
+                    <?php
+                        }//конец while
+                    }//конец if
+                    ?>
+                   <!-- <article class="bottom_block_left_item">
                         <a class="bottom_block_left_item_wrap">
                             <div class="bottom_block_left_images_wrap">
                                 <div class="bottom_block_left_item_image img-hover fahwerk"></div>
@@ -157,7 +207,7 @@
                                 </div>
                             </div>
                         </a>
-                    </article>
+                    </article>-->
                 </div>
             </div>
             <div class="col-12 col-lg-4 bottom_block_right">
