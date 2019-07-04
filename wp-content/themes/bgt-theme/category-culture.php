@@ -157,7 +157,7 @@
                                         <h2 class="text-hover"><?php  the_title(); ?></h2>
                                     </div>
                                     <div class="bottom_block_right_item_meta">
-                                        <span class="bottom_block_right_item_cat">TRAVEL</span>
+                                        <span class="bottom_block_right_item_cat">TRAVEL BLOG</span>
                                         <span class="bottom_block_right_item_author"><?php the_author(); ?></span>
                                         <span>-</span>
                                         <span class="bottom_block_right_item_date"><?php the_time('M j, Y'); ?></span>
@@ -206,7 +206,7 @@
                                         <h2 class="text-hover"><?php the_title(); ?></h2>
                                     </div>
                                     <div class="bottom_block_right_item_meta">
-                                        <span class="bottom_block_right_item_cat">FUN!</span>
+                                        <span class="bottom_block_right_item_cat">TRIP IDEAS</span>
                                         <span class="bottom_block_right_item_author"><?php the_author(); ?></span>
                                         <span>-</span>
                                         <span class="bottom_block_right_item_date"><?php the_time('M j, Y'); ?></span>

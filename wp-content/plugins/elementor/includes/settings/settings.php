@@ -147,7 +147,7 @@ class Settings extends Settings_Page {
 			[ $this, 'handle_external_redirects' ]
 		);
 
-		add_submenu_page( Source_Local::ADMIN_MENU_SLUG, __( 'Theme Templates', 'elementor' ), __( 'Theme Builder', 'elementor' ), 'manage_options', 'theme_templates', [ $this, 'elementor_theme_templates' ] );
+		add_submenu_page( Source_Local::ADMIN_MENU_SLUG, __( 'Theme templates', 'elementor' ), __( 'Theme Builder', 'elementor' ), 'manage_options', 'theme_templates', [ $this, 'elementor_theme_templates' ] );
 		add_submenu_page( Source_Local::ADMIN_MENU_SLUG, __( 'Popups', 'elementor' ), __( 'Popups', 'elementor' ), 'manage_options', 'popup_templates', [ $this, 'elementor_popups' ] );
 	}
 
@@ -308,7 +308,7 @@ class Settings extends Settings_Page {
 	/**
 	 * Display settings page.
 	 *
-	 * Output the content for the Theme Templates page.
+	 * Output the content for the Theme templates page.
 	 *
 	 * @since 2.4.0
 	 * @access public

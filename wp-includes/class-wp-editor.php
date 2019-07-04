@@ -1241,7 +1241,7 @@ final class _WP_Editors {
 				'Scope'                                => _x( 'Scope', 'table cell scope attribute' ),
 
 				'Insert template'                      => _x( 'Insert template', 'TinyMCE' ),
-				'Templates'                            => _x( 'Templates', 'TinyMCE' ),
+				'templates'                            => _x( 'templates', 'TinyMCE' ),
 
 				'Background color'                     => __( 'Background color' ),
 				'Text color'                           => __( 'Text color' ),

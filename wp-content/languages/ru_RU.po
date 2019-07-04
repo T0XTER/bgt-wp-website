@@ -10205,7 +10205,7 @@ msgstr "Вставить шаблон"
 
 #: wp-includes/class-wp-editor.php:1244
 msgctxt "TinyMCE"
-msgid "Templates"
+msgid "templates"
 msgstr "Шаблоны"
 
 #: wp-includes/class-wp-editor.php:1248

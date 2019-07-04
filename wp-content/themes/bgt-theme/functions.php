@@ -72,9 +72,16 @@ function filter_function_name_5686( $output, $doctype ){
 
     return $output;
 }
+/*return apply_filters( 'language_attributes', $output, $doctype );*/
 
 remove_filter( 'the_excerpt', 'wpautop' );
 
 remove_filter( 'the_content', 'wpautop' );
 
-return apply_filters( 'language_attributes', $output, $doctype );
+/*add_filter('template_include', function($path) {
+if ( is_post() ){
+    return get_stylesheet_directory() .
+}
+});*/
+
+

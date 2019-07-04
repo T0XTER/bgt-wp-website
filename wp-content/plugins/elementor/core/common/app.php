@@ -192,7 +192,7 @@ class App extends BaseApp {
 	}
 
 	/**
-	 * Print Templates
+	 * Print templates
 	 *
 	 * Prints all registered templates.
 	 *

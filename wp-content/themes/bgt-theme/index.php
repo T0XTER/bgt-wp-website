@@ -102,7 +102,7 @@
             ?>
             <div class="col-12 col-lg-6">
                 <article class="top_two_big_item">
-                    <a class="top_two_big_item_wrap">
+                    <a class="top_two_big_item_wrap" href="<?php the_permalink()?>">
                         <div class="top_two_big_images_wrap">
                             <?php
                             $imageArray = get_post_thumbnail_id()

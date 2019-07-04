@@ -956,7 +956,7 @@ wp.mediaWidgets = ( function( $ ) {
 				}
 			});
 
-			// Templates need to be aware of the error.
+			// templates need to be aware of the error.
 			previewTemplateProps.error = control.model.get( 'error' );
 			return previewTemplateProps;
 		},

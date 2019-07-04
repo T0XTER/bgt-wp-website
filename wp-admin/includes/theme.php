@@ -108,7 +108,7 @@ function delete_theme( $stylesheet, $redirect = '' ) {
 }
 
 /**
- * Get the Page Templates available in this theme
+ * Get the Page templates available in this theme
  *
  * @since 1.5.0
  * @since 4.7.0 Added the `$post_type` parameter.

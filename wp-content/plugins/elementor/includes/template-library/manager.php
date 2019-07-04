@@ -200,7 +200,7 @@ class Manager {
 	 * @since 1.0.0
 	 * @access public
 	 *
-	 * @return array Templates array.
+	 * @return array templates array.
 	 */
 	public function get_templates() {
 		$templates = [];

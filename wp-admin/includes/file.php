@@ -33,7 +33,7 @@ $wp_file_descriptions = array(
 	'date.php'              => __( 'Date Template' ),
 	// Content
 	'singular.php'          => __( 'Singular Template' ),
-	'single.php'            => __( 'Single Post' ),
+	'single-post-teslas-prototype-model-s-charger-is-a-freaky-robot.php'            => __( 'Single Post' ),
 	'category-culture.php'              => __( 'Single Page' ),
 	'front-category-culture.php'        => __( 'Homepage' ),
 	// Attachments

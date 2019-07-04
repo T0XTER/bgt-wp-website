@@ -216,19 +216,19 @@ class Source_Local extends Source_Base {
 	 */
 	public function register_data() {
 		$labels = [
-			'name' => _x( 'My Templates', 'Template Library', 'elementor' ),
+			'name' => _x( 'My templates', 'Template Library', 'elementor' ),
 			'singular_name' => _x( 'Template', 'Template Library', 'elementor' ),
 			'add_new' => _x( 'Add New', 'Template Library', 'elementor' ),
 			'add_new_item' => _x( 'Add New Template', 'Template Library', 'elementor' ),
 			'edit_item' => _x( 'Edit Template', 'Template Library', 'elementor' ),
 			'new_item' => _x( 'New Template', 'Template Library', 'elementor' ),
-			'all_items' => _x( 'All Templates', 'Template Library', 'elementor' ),
+			'all_items' => _x( 'All templates', 'Template Library', 'elementor' ),
 			'view_item' => _x( 'View Template', 'Template Library', 'elementor' ),
 			'search_items' => _x( 'Search Template', 'Template Library', 'elementor' ),
-			'not_found' => _x( 'No Templates found', 'Template Library', 'elementor' ),
-			'not_found_in_trash' => _x( 'No Templates found in Trash', 'Template Library', 'elementor' ),
+			'not_found' => _x( 'No templates found', 'Template Library', 'elementor' ),
+			'not_found_in_trash' => _x( 'No templates found in Trash', 'Template Library', 'elementor' ),
 			'parent_item_colon' => '',
-			'menu_name' => _x( 'Templates', 'Template Library', 'elementor' ),
+			'menu_name' => _x( 'templates', 'Template Library', 'elementor' ),
 		];
 
 		$args = [
@@ -330,7 +330,7 @@ class Source_Local extends Source_Base {
 		}
 		$library_submenu = &$submenu[ self::ADMIN_MENU_SLUG ];
 
-		// Remove 'All Templates' menu.
+		// Remove 'All templates' menu.
 		unset( $library_submenu[5] );
 
 		// If current use can 'Add New' - move the menu to end, and add the '#add_new' anchor.
@@ -361,7 +361,7 @@ class Source_Local extends Source_Base {
 	}
 
 	public function admin_menu() {
-		add_submenu_page( self::ADMIN_MENU_SLUG, '', __( 'Saved Templates', 'elementor' ), Editor::EDITING_CAPABILITY, self::get_admin_url( true ) );
+		add_submenu_page( self::ADMIN_MENU_SLUG, '', __( 'Saved templates', 'elementor' ), Editor::EDITING_CAPABILITY, self::get_admin_url( true ) );
 	}
 
 	public function admin_title( $admin_title, $title ) {
@@ -876,7 +876,7 @@ class Source_Local extends Source_Base {
 		$ajax = Plugin::$instance->common->get_component( 'ajax' );
 		?>
 		<div id="elementor-hidden-area">
-			<a id="elementor-import-template-trigger" class="page-title-action"><?php echo __( 'Import Templates', 'elementor' ); ?></a>
+			<a id="elementor-import-template-trigger" class="page-title-action"><?php echo __( 'Import templates', 'elementor' ); ?></a>
 			<div id="elementor-import-template-area">
 				<div id="elementor-import-template-title"><?php echo __( 'Choose an Elementor template JSON file or a .zip archive of Elementor templates, and add them to the list of templates available in your library.', 'elementor' ); ?></div>
 				<form id="elementor-import-template-form" method="post" action="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
@@ -1558,7 +1558,7 @@ class Source_Local extends Source_Base {
 
 			if ( $current_tab_group ) {
 				$titles = [
-					'library' => __( 'Saved Templates', 'elementor' ),
+					'library' => __( 'Saved templates', 'elementor' ),
 					'theme' => __( 'Theme Builder', 'elementor' ),
 					'popup' => __( 'Popups', 'elementor' ),
 				];

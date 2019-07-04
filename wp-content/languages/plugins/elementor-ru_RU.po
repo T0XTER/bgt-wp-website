@@ -176,7 +176,7 @@ msgstr "Рубрики"
 
 #: includes/template-library/sources/local.php:231
 msgctxt "Template Library"
-msgid "Templates"
+msgid "templates"
 msgstr "Шаблоны"
 
 #: includes/controls/groups/background.php:355
@@ -222,7 +222,7 @@ msgid "Theme Builder"
 msgstr "Конструктор тем"
 
 #: includes/settings/settings.php:150
-msgid "Theme Templates"
+msgid "Theme templates"
 msgstr "Шаблоны темы"
 
 #: modules/safe-mode/module.php:335
@@ -283,7 +283,7 @@ msgstr "Обновление данных Elementor"
 
 #: core/common/modules/finder/categories/general.php:44
 msgctxt "Template Library"
-msgid "Saved Templates"
+msgid "Saved templates"
 msgstr "Сохранённые шаблоны"
 
 #. translators: %d: interval
@@ -791,7 +791,7 @@ msgid "Position"
 msgstr "Позиционирование"
 
 #: includes/admin-templates/new-template.php:41
-msgid "Templates Help You <span>Work Efficiently</span>"
+msgid "templates Help You <span>Work Efficiently</span>"
 msgstr "Шаблоны помогут вам <span>работать эффективнее</span>"
 
 #: core/admin/admin.php:741
@@ -860,7 +860,7 @@ msgstr "Все"
 
 #: includes/template-library/sources/local.php:219
 msgctxt "Template Library"
-msgid "My Templates"
+msgid "My templates"
 msgstr "Мои шаблоны"
 
 #: includes/admin-templates/new-template.php:89
@@ -908,7 +908,7 @@ msgid "More actions"
 msgstr "Больше действий"
 
 #: includes/editor-templates/templates.php:100
-msgid "Search Templates:"
+msgid "Search templates:"
 msgstr "Поиск шаблонов:"
 
 #: includes/editor.php:609
@@ -1157,7 +1157,7 @@ msgid "Please make sure your search is spelled correctly or try a different word
 msgstr "Убедитесь, что ищете правильно или попробуйте ввести другие слова."
 
 #: includes/editor.php:603
-msgid "No Favorite Templates"
+msgid "No Favorite templates"
 msgstr "Нет избранных шаблонов"
 
 #: includes/editor.php:602
@@ -2297,7 +2297,7 @@ msgid "Import Now"
 msgstr "Импортировать"
 
 #: includes/template-library/sources/local.php:879
-msgid "Import Templates"
+msgid "Import templates"
 msgstr "Импортировать шаблоны"
 
 #: includes/template-library/sources/local.php:851
@@ -2315,12 +2315,12 @@ msgstr "Тип"
 
 #: includes/template-library/sources/local.php:229
 msgctxt "Template Library"
-msgid "No Templates found in Trash"
+msgid "No templates found in Trash"
 msgstr "Шаблонов в корзине не найдено"
 
 #: includes/template-library/sources/local.php:228
 msgctxt "Template Library"
-msgid "No Templates found"
+msgid "No templates found"
 msgstr "Шаблонов не найдено"
 
 #: includes/template-library/sources/local.php:227
@@ -2335,7 +2335,7 @@ msgstr "Просмотреть шаблон"
 
 #: includes/template-library/sources/local.php:225
 msgctxt "Template Library"
-msgid "All Templates"
+msgid "All templates"
 msgstr "Все шаблоны"
 
 #: includes/template-library/sources/local.php:224
@@ -2415,7 +2415,7 @@ msgid "This is where your templates should be. Design it. Save it. Reuse it."
 msgstr "Они должны быть здесь. Создайте их, сохраните и используйте повторно."
 
 #: includes/editor.php:601
-msgid "Haven’t Saved Templates Yet?"
+msgid "Haven’t Saved templates Yet?"
 msgstr "Еще не сохранили шаблоны?"
 
 #: includes/editor-templates/templates.php:216
@@ -2445,7 +2445,7 @@ msgid "Insert"
 msgstr "Вставить"
 
 #: includes/editor.php:610
-msgid "My Templates"
+msgid "My templates"
 msgstr "Мои шаблоны"
 
 #: includes/editor.php:593
@@ -2460,7 +2460,7 @@ msgstr "Закрыть"
 
 #: includes/template-library/sources/local.php:364
 #: includes/template-library/sources/local.php:1561
-msgid "Saved Templates"
+msgid "Saved templates"
 msgstr "Сохранённые шаблоны"
 
 #: includes/editor-templates/hotkeys.php:135
