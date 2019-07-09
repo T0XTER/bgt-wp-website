@@ -23,7 +23,7 @@
                         $query8->the_post();
                     ?>
                     <article class="footer_widget_item">
-                        <a href="">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="footer_widget_item_img_wrap">
                                 <?php
                                 $imageArray = get_post_thumbnail_id()
@@ -68,7 +68,7 @@
                     $query9->the_post();
                     ?>
                     <article class="footer_widget_item">
-                        <a href="">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="footer_widget_item_img_wrap">
                                 <?php
                                 $imageArray = get_post_thumbnail_id()
@@ -113,7 +113,7 @@
                     $query10->the_post();
                     ?>
                     <article class="footer_widget_item">
-                        <a href="">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="footer_widget_item_img_wrap">
                                 <?php
                                 $imageArray = get_post_thumbnail_id()

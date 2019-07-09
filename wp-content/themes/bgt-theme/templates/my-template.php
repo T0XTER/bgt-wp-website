@@ -3,13 +3,14 @@
 Template Name: Шаблон поста
 Template Post Type: post
 */
+
+get_header();
 ?>
-
-<?php get_header(); ?>
-
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-8">
+            <?php if ( have_posts() ) : get_post();
+                while (have_posts()) : the_post(); ?>
             <article class="article-item">
                 <div class="article-item-wrap">
                     <h1 class=""><?php the_title(); ?></h1>
@@ -19,7 +20,7 @@ Template Post Type: post
                         <span class="article-item-meta-date"><?php the_time('M j, Y'); ?></span>
                     </div>
                     <div class="wp-ad-wrap">
-                        <img class="wp-ad" src="<?php bloginfo('template_url'); ?>/assets/images/Layer141.png" alt="WPTheme">
+                        <!--<img class="wp-ad" src="< ?php bloginfo('template_url'); ?>/assets/images/Layer141.png" alt="WPTheme">-->
                     </div>
                     <?php the_content(); ?>
                     <!--<p class="article-item-text">
@@ -55,6 +56,34 @@ Template Post Type: post
                     </p>-->
                 </div>
             </article>
+                <?php
+        // задаем нужные нам критерии выборки данных из БД
+        // узнаем категорию поста
+        $categories = get_the_category();
+        $category_id = $categories[0]->cat_ID;
+        $args = array(
+            'posts_per_page' => 3,
+            'post__not_in' => array($post->ID),
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => array('post'),
+            'post_status' => array('publish'),
+            'category__in' => $category_id
+        );
+        $query = new WP_Query($args);
+        // Цикл
+        while ($query->have_posts()) {
+            $query->the_post();
+//            $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+            ?>
+
+            <?php
+        }
+                    // Возвращаем оригинальные данные поста. Сбрасываем $post.
+                    wp_reset_postdata();
+                    ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
             <img class="mobile-store-ad" src="<?php bloginfo('template_url'); ?>/assets/images/Layer2.png" alt="mobile-ad">
             <img class="x-ad" src="<?php bloginfo('template_url'); ?>/assets/images/x-ad.png" alt="x-ad">
             <div class="read-next">
@@ -98,7 +127,7 @@ Template Post Type: post
                 <div class="next-page-button-text">NEXT PAGE</div>
             </a>
             <div class="bottom-left-ad">
-                <img class="bottom-left-ad-img" src="<?php bloginfo('template_url'); ?>/assets/images/Layer%2091.png" alt="">
+                <img class="bottom-left-ad-img" src="< ?php bloginfo('template_url'); ?>/assets/images/Layer%2091.png" alt="">
             </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block">

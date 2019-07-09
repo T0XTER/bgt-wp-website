@@ -76,7 +76,7 @@ function filter_function_name_5686( $output, $doctype ){
 
 remove_filter( 'the_excerpt', 'wpautop' );
 
-remove_filter( 'the_content', 'wpautop' );
+//remove_filter( 'the_content', 'wpautop' );
 
 /*add_filter('template_include', function($path) {
 if ( is_post() ){

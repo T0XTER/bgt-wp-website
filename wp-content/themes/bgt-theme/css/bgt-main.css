@@ -425,6 +425,12 @@ footer a,
     z-index: 0;
 }
 
+.middle_five_small_block_text_wrap p,
+.bottom_block_right_no_img_item_header h2,
+.bottom_block_right_item_header h2 {
+    color: #282828!important;
+}
+
 .middle_two_big_item {
     max-width: 480px;
     margin: 0 auto 55px auto;

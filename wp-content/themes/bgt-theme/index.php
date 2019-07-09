@@ -102,7 +102,7 @@
             ?>
             <div class="col-12 col-lg-6">
                 <article class="top_two_big_item">
-                    <a class="top_two_big_item_wrap" href="<?php the_permalink()?>">
+                    <a class="top_two_big_item_wrap" href="<?php the_permalink(); ?>">
                         <div class="top_two_big_images_wrap">
                             <?php
                             $imageArray = get_post_thumbnail_id()
@@ -173,7 +173,7 @@
                 $query3->the_post();
             ?>
             <article class="middle_five_small_block_item">
-                <a class="middle_five_small_block_item_wrap">
+                <a class="middle_five_small_block_item_wrap" href="<?php the_permalink(); ?>">
                     <div class="middle_five_small_block_img_wrap">
                         <?php
                         $imageArray = get_post_thumbnail_id()
@@ -224,7 +224,7 @@
             ?>
             <div class="col-12 col-lg-4 middle_two_big_block">
                 <div class="middle_two_big_item">
-                    <a href="http://" class="middle_two_big_item_link">
+                    <a href="<?php the_permalink(); ?>" class="middle_two_big_item_link">
                         <div class="middle_two_big_img">
                             <div class="middle_two_big_item_img_wrap">
                                 <?php
@@ -258,7 +258,7 @@
                 <div id="bot_ads">
                     <div class="soc-wrap">
                         <div class="middle_two_big_right_ad">
-                            <a href="http://" class="middle_two_big_item_link">
+                            <a href="<?php the_permalink(); ?>" class="middle_two_big_item_link">
                                 <div class="middle_two_big_img">
                                     <div class="middle_two_big_item_img_wrap">
                                         <div id="WP_news_ad"></div>
@@ -311,7 +311,7 @@
                             $ids[] = get_the_ID();
                             ?>
                     <article class="bottom_block_left_item">
-                        <a class="bottom_block_left_item_wrap">
+                        <a class="bottom_block_left_item_wrap" href="<?php the_permalink(); ?>">
                             <div class="bottom_block_left_images_wrap">
                                 <?php
                                 $imageArray = get_post_thumbnail_id()
@@ -364,7 +364,7 @@
                                 $ids2[] = get_the_ID();
                                 ?>
                                 <article class="bottom_block_right_no_img_item">
-                                    <a class="bottom_block_right_no_img_item_wrap">
+                                    <a class="bottom_block_right_no_img_item_wrap" href="<?php the_permalink(); ?>">
                                         <div class="bottom_block_right_no_img_item_text_wrap">
                                             <div class="bottom_block_right_no_img_item_header">
                                                 <h2 class="text-hover"><?php the_title(); ?></h2>
@@ -404,7 +404,7 @@
                                 $query7->the_post();
                                 ?>
                                 <article class="bottom_block_right_item">
-                                    <a class="bottom_block_right_item_wrap">
+                                    <a class="bottom_block_right_item_wrap" href="<?php the_permalink(); ?>">
                                         <div class="bottom_block_right_item_images_wrap">
                                             <?php
                                             $imageArray = get_post_thumbnail_id()

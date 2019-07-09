@@ -242,15 +242,15 @@ h1 {
 }
 
 #next-1 {
-    background-image: url(../images/6.png);
+    background-image: url(../assets/images/6.png);
 }
 
 #next-2 {
-    background-image: url(../images/CILD_BMaher.png);
+    background-image: url(../assets/images/CILD_BMaher.png);
 }
 
 #next-3 {
-    background-image: url(../images/CILD_JBowen.png);
+    background-image: url(../assets/images/CILD_JBowen.png);
 }
 
 .next-page-button {
@@ -287,7 +287,7 @@ h1 {
 }
 
 #woman-in-hat {
-    background-image: url(../images/Layer155.png);
+    background-image: url(../assets/images/Layer155.png);
 }
 
 
@@ -361,27 +361,27 @@ h1 {
 }
 
 #car {
-    background-image: url(../images/Layer103.png);
+    background-image: url(../assets/images/Layer103.png);
 }
 
 #sea_view {
-    background-image: url(../images/Layer156.png);
+    background-image: url(../assets/images/Layer156.png);
 }
 
 #footer_lama {
-    background-image: url(../images/Layer157.png);
+    background-image: url(../assets/images/Layer157.png);
 }
 
 #mntn_tent {
-    background-image: url(../images/Layer158.png);
+    background-image: url(../assets/images/Layer158.png);
 }
 
 #footer_eur_architect {
-    background-image: url(../images/Layer159.png);
+    background-image: url(../assets/images/Layer159.png);
 }
 
 #girl_bridge {
-    background-image: url(../images/Layer160.png);
+    background-image: url(../assets/images/Layer160.png);
 }
 
 .footer_widget_item_text {
@@ -401,7 +401,7 @@ h1 {
     max-width: 520px;
     height: 6px;
     margin: 0 auto 27px;
-    background: url(../images/horizontal_divider_mob.png) 100% 50% repeat-x;
+    background: url(../assets/images/horizontal_divider_mob.png) 100% 50% repeat-x;
 }
 
 .footer-logo {
@@ -521,7 +521,7 @@ h1 {
     .main-horizontal-divider {
         max-width: 860px;
         height: 7px;
-        background: url(../images/main_horizontal_divider.png) 100% 50% repeat-x;
+        background: url(../assets/images/main_horizontal_divider.png) 100% 50% repeat-x;
     }
 
     .footer_about {
@@ -531,7 +531,7 @@ h1 {
     .horizontal-divider {
         max-width: 860px;
         height: 7px;
-        background: url(../images/horizontal_divider_tab.png) 100% 50% repeat-x;
+        background: url(../assets/images/horizontal_divider_tab.png) 100% 50% repeat-x;
     }
 
     .footer-logo {

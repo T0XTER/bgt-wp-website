@@ -14,7 +14,6 @@
                     <div class="wp-ad-wrap">
                         <img class="wp-ad" src="assets/images/Layer141.png" alt="WPTheme">
                     </div>
-                    <?php the_content(); ?>
                     <!--<p class="article-item-text">
                         Although life behind Hollywood’s closed
                         doors might seem too good to be true,
