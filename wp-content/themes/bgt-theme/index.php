@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main id="main_content" class="home">
 <div id="banner">
     <div class="container">
         <div class="banner_items_wrap">

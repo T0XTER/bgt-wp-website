@@ -10,8 +10,8 @@ body {
     font-family: "Open Sans", SansSerif !important;
 }
 
-.container {
-    max-width: none!important;
+main:not(.home) {
+    margin-top: 20px;
 }
 
 a {
@@ -52,14 +52,10 @@ footer a,
 }
 
 .bgt-nav {
+    padding: 0.5rem 1rem;
     min-height: 90px;
     justify-content: start !important;
 
-}
-
-.navbar .container {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 .navbar-toggler {
@@ -93,7 +89,6 @@ footer a,
 
 .menu-block {
     width: 100%;
-    padding-right: 20px;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -137,12 +132,17 @@ footer a,
     margin-bottom: 17px;
 }
 
+#banner .container {
+    max-width: 100%;
+}
+
 .banner_items_wrap {
 }
 
 .banner_item {
     overflow: hidden;
-    margin: 0 -15px;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 .banner_item_wrap {
@@ -319,6 +319,12 @@ footer a,
     text-align: center;
 }
 
+.wp-ad, .x-ad {
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
 .section-header {
     color: #1c5379;
 }
@@ -379,7 +385,7 @@ footer a,
     font-weight: 600;
 }
 
-.top_two_big_item_meta {
+.top_two_big_item_meta, .article-item-tag {
     color: #282828;
     font-size: 14px;
     font-weight: 600;
@@ -580,6 +586,10 @@ footer a,
     color: #6a6a6a;
 }
 
+.article-item-tag {
+    margin-bottom: 30px;
+}
+
 .ad {
     display: none;
 }
@@ -693,6 +703,10 @@ footer a,
     float: left;
 }
 
+.footer_widget_item_text .text-hover {
+    margin-bottom: 0;
+}
+
 .footer_about {
     position: relative;
     margin-top: 35px;
@@ -785,10 +799,6 @@ footer a,
 }
 
 @media (min-width: 576px) {
-    .container {
-        width: 100% !important;
-        max-width: 100%!important;
-    }
 
     .bottom_block_left_images_wrap {
         height: 224px;
@@ -799,8 +809,12 @@ footer a,
 }
 
 @media (min-width: 768px) {
-    .container {
-        width: 100% !important;
+
+    main:not(.home) {
+        margin-top: 34px;
+    }
+
+    #banner .container {
         max-width: 100%!important;
     }
 
@@ -870,7 +884,7 @@ footer a,
 
     }
 
-    .top_two_big_item_meta {
+    .top_two_big_item_meta, .article-item-tag {
         font-size: 12px;
     }
 
@@ -880,6 +894,10 @@ footer a,
 
     .middle_five_small_block_item {
         margin-bottom: 31px;
+    }
+
+    .middle_five_small_block_item:nth-child(n+5) {
+        display: none;
     }
 
     .middle_five_small_block_img_wrap {
@@ -971,9 +989,13 @@ footer a,
 }
 
 @media (min-width: 992px) {
-    .container {
-        width: 100% !important;
-        max-width: 100%!important;
+
+    main:not(.home) {
+        margin-top: 29px;
+    }
+
+    #banner .container {
+        max-width: 960px!important;
     }
 
     .bgt-nav {
@@ -981,9 +1003,9 @@ footer a,
         box-shadow: 2px 3.5px 7px 0 rgba(106, 106, 106, 0.35);
     }
 
-    .navbar-brand {
+    /*.navbar-brand {
         margin-left: 22px;
-    }
+    }*/
 
     .navbar-nav {
         margin: 0;
@@ -992,6 +1014,11 @@ footer a,
         justify-content: space-around;
         align-items: center;
         align-content: center;
+    }
+
+    .banner_item {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .banner_image_wrap {
@@ -1020,7 +1047,7 @@ footer a,
         margin-bottom: 13px;
     }
 
-    .top_two_big_item_meta {
+    .top_two_big_item_meta, .article-item-tag {
         margin: 0 0 0 1px;
     }
 
@@ -1033,6 +1060,10 @@ footer a,
     .middle_five_small_block_item {
         flex: 0 0 18.5%;
         max-width: 18.5%;
+    }
+
+    .middle_five_small_block_item:nth-child(n+5) {
+        display: flex;
     }
 
     .middle_five_small_block_img_wrap {
@@ -1145,11 +1176,22 @@ footer a,
     .footer-menu-block .flex-wrap {
         align-items: flex-start;
     }
+
+    footer .nav-link {
+        padding: 0.5rem;
+    }
 }
 
-@media (min-width: 1230px) {
-    .container {
-        max-width: 1200px!important;
+
+
+@media (min-width: 1200px) {
+
+    main:not(.home) {
+        margin-top: 49px;
+    }
+
+    #banner .container {
+        max-width: 1140px!important;
     }
 
     .navbar-brand {
@@ -1157,6 +1199,7 @@ footer a,
     }
 
     .menu-block {
+        padding-right: 20px;
         justify-content: flex-end;
     }
 
@@ -1212,4 +1255,5 @@ footer a,
     .footer-logo {
         text-align: start;
     }
+
 }

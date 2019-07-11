@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg bgt-nav p-0">
+    <nav class="navbar navbar-expand-lg bgt-nav">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -32,7 +32,7 @@
                     <?php the_custom_logo( $blog_id ); ?>
                 </div>
             </div>
-            <div class="navbar-collapse mx-xl-auto collapse" id="navbarSupportedContent">
+            <div class="navbar-collapse mx-xl-auto collapse mt-3" id="navbarSupportedContent">
                 <?php
                     wp_nav_menu( array(
                         'theme_location'    => 'header-menu',
@@ -57,4 +57,3 @@
         </div>
     </nav>
 </header>
-<main id="main_content">

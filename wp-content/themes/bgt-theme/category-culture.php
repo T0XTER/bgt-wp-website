@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<main id="main_content">
 <div class="bottom_block">
     <div class="container">
         <div class="section-header"><h2>CULTURE</h2></div>

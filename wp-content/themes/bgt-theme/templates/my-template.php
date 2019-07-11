@@ -6,6 +6,7 @@ Template Post Type: post
 
 get_header();
 ?>
+<main id="main_content">
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-8">
@@ -20,7 +21,7 @@ get_header();
                         <span class="article-item-meta-date"><?php the_time('M j, Y'); ?></span>
                     </div>
                     <div class="wp-ad-wrap">
-                        <!--<img class="wp-ad" src="< ?php bloginfo('template_url'); ?>/assets/images/Layer141.png" alt="WPTheme">-->
+                        <img class="wp-ad" src="<?php bloginfo('template_url'); ?>/assets/images/Layer141.png" alt="WPTheme">
                     </div>
                     <?php the_content(); ?>
                     <!--<p class="article-item-text">
