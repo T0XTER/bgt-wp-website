@@ -1,20 +1,20 @@
-<?php get_header(); ?>
+<!--< ?php get_header(); ?>
 <main id="main_content">
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-8">
             <article class="article-item">
                 <div class="article-item-wrap">
-                    <h1 class=""><?php the_title(); ?></h1>
+                    <h1 class="">< ?php the_title(); ?></h1>
                     <div class="article-item-tag">
-                        <span class="article-item-meta-author"><?php the_author(); ?></span>
+                        <span class="article-item-meta-author">< ?php the_author(); ?></span>
                         <span>-</span>
-                        <span class="article-item-meta-date"><?php the_time('M j, Y'); ?></span>
+                        <span class="article-item-meta-date">< ?php the_time('M j, Y'); ?></span>
                     </div>
                     <div class="wp-ad-wrap">
                         <img class="wp-ad" src="assets/images/Layer141.png" alt="WPTheme">
                     </div>
-                    <!--<p class="article-item-text">
+                    < !--<p class="article-item-text">
                         Although life behind Hollywood’s closed
                         doors might seem too good to be true,
                         even the richest and most famous figures
@@ -44,7 +44,7 @@
                         “parent”, the issue in is widespread. Here
                         are 16 celebrities who were really honest
                         about their struggles to conceive.
-                    </p>-->
+                    </p>-- >
                 </div>
             </article>
             <img class="mobile-store-ad" src="assets/images/Layer2.png" alt="mobile-ad">
@@ -133,4 +133,4 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+< ?php get_footer(); ?>-->

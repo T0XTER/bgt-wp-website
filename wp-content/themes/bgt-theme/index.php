@@ -259,7 +259,7 @@
                 <div id="bot_ads">
                     <div class="soc-wrap">
                         <div class="middle_two_big_right_ad">
-                            <a href="<?php the_permalink(); ?>" class="middle_two_big_item_link">
+                            <a href="#" class="middle_two_big_item_link">
                                 <div class="middle_two_big_img">
                                     <div class="middle_two_big_item_img_wrap">
                                         <div id="WP_news_ad"></div>
