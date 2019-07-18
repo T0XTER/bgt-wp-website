@@ -5,7 +5,6 @@
         <div class="banner_items_wrap">
             <div class="banner_item">
                 <?php
-                // задаем нужные нам критерии выборки данных из БД
                 $args = array(
                     'posts_per_page' => '1',
                     'orderby' => 'date'
@@ -13,7 +12,6 @@
 
                 $query = new WP_Query($args);
 
-                // Цикл
                 if ($query->have_posts()) {
                     while ($query->have_posts()) {
                         $query->the_post();
@@ -51,9 +49,9 @@
                             </div>
                         </a>
                         <?php
-                    }//конец while
+                    }
                     wp_reset_postdata();
-                }//конец if
+                }
                 ?>
             </div>
         </div>
@@ -87,7 +85,6 @@
     <div class="container">
         <div class="row">
             <?php
-            // задаем нужные нам критерии выборки данных из БД
             $args2 = array(
                 'posts_per_page' => '2',
                 'orderby' => 'date',
@@ -96,7 +93,6 @@
 
             $query2 = new WP_Query($args2);
 
-            // Цикл
             if ($query2->have_posts()) {
                 while ($query2->have_posts()) {
                     $query2->the_post();
@@ -137,9 +133,9 @@
                 </article>
             </div>
             <?php
-            }//конец while
+            }
                 wp_reset_postdata();
-            }//конец if
+            }
             ?>
         </div>
     </div>
@@ -157,7 +153,6 @@
         <div class="main-horizontal-divider"></div>
         <div class="middle_five_small_block_wrap">
             <?php
-            // задаем нужные нам критерии выборки данных из БД
             $args3 = array(
                     'category_name' => 'без-рубрики',
                 'tag' => 'trip-advices',
@@ -168,7 +163,6 @@
 
             $query3 = new WP_Query($args3);
 
-            // Цикл
             if ($query3->have_posts()) {
                 while ($query3->have_posts()) {
                 $query3->the_post();
@@ -192,9 +186,9 @@
                 </a>
             </article>
                 <?php
-                }//конец while
+                }
                 wp_reset_postdata();
-            }//конец if
+            }
             ?>
         </div>
     </div>
@@ -207,7 +201,6 @@
         </div>
         <div class="row">
             <?php
-            // задаем нужные нам критерии выборки данных из БД
             $args4 = array(
                 'category_name' => 'travel-blog',
                 'tag' => 'travel-blog',
@@ -251,9 +244,9 @@
                 </div>
             </div>
                 <?php
-                }//конец while
+                }
                 wp_reset_postdata();
-            }//конец if
+            }
             ?>
             <div class="col-lg-4 d-none d-lg-block">
                 <div id="bot_ads">
@@ -295,7 +288,6 @@
             <div class="col-12 col-lg-8 bottom_block_left">
                 <div class="bottom_block_left_wrap">
                     <?php
-                    // задаем нужные нам критерии выборки данных из БД
                     $args5 = array(
                         'tag' => 'culture',
                         'numberposts' => 4,
@@ -305,7 +297,7 @@
 
                     $query5 = new WP_Query($args5);
                     $ids = [];
-                    // Цикл
+
                     if ($query5->have_posts()) {
                         while ($query5->have_posts()) {
                             $query5->the_post();
@@ -338,8 +330,8 @@
                         </a>
                     </article>
                     <?php
-                        }//конец while
-                    }//конец if
+                        }
+                    }
                     ?>
                 </div>
             </div>
@@ -347,7 +339,6 @@
                 <div class="bottom_block_right_wrap">
                     <div class="bottom_block_right_no_img">
                         <?php
-                        // задаем нужные нам критерии выборки данных из БД
                         $args6 = array(
                                 'tag' => 'culture',
                             'numberposts' => 3,
@@ -358,7 +349,7 @@
 
                         $query6 = new WP_Query($args6);
                         $ids2 = [];
-                        // Цикл
+
                         if ($query6->have_posts()) {
                             while ($query6->have_posts()) {
                                 $query6->the_post();
@@ -380,8 +371,8 @@
                                     </a>
                                 </article>
                                 <?php
-                            }//конец while
-                        }//конец if
+                            }
+                        }
                         ?>
                     </div>
                     <div class="bottom_block_right_img">
@@ -399,7 +390,6 @@
 
                         $query7 = new WP_Query($args7);
 
-                        // Цикл
                         if ($query7->have_posts()) {
                             while ($query7->have_posts()) {
                                 $query7->the_post();
@@ -431,9 +421,9 @@
                                     </a>
                                 </article>
                             <?php
-                            }//конец while
+                            }
                             wp_reset_postdata();
-                        }//конец if
+                        }
                         ?>
                     </div>
                 </div>

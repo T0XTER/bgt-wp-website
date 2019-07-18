@@ -7,7 +7,6 @@
                 <div class="widget">
                     <h2 class="widget_title">HOT POSTS</h2>
                     <?php
-                    // задаем нужные нам критерии выборки данных из БД
                     $args8 = array(
                         'tag' => 'hot-posts',
                         'numberposts' => 2,
@@ -42,9 +41,9 @@
                         </a>
                     </article>
                         <?php
-                        }//конец while
+                        }
                         wp_reset_postdata();
-                    }//конец if
+                    }
                     ?>
                 </div>
             </div>
@@ -52,7 +51,6 @@
                 <div class="widget">
                     <h2 class="widget_title">POPULAR POSTS</h2>
                     <?php
-                    // задаем нужные нам критерии выборки данных из БД
                     $args9 = array(
                         'tag' => 'popular-posts',
                         'numberposts' => 2,
@@ -62,7 +60,6 @@
 
                     $query9 = new WP_Query($args9);
 
-                    // Цикл
                     if ($query9->have_posts()) {
                     while ($query9->have_posts()) {
                     $query9->the_post();
@@ -87,9 +84,9 @@
                         </a>
                     </article>
                         <?php
-                        }//конец while
+                        }
                         wp_reset_postdata();
-                    }//конец if
+                    }
                     ?>
                 </div>
             </div>
@@ -97,7 +94,6 @@
                 <div class="widget">
                     <h2 class="widget_title">TRENDING NOW</h2>
                     <?php
-                    // задаем нужные нам критерии выборки данных из БД
                     $args10 = array(
                         'tag' => 'trending-now',
                         'numberposts' => 2,
@@ -107,7 +103,6 @@
 
                     $query10 = new WP_Query($args10);
 
-                    // Цикл
                     if ($query10->have_posts()) {
                     while ($query10->have_posts()) {
                     $query10->the_post();
@@ -132,9 +127,9 @@
                         </a>
                     </article>
                         <?php
-                        }//конец while
+                        }
                         wp_reset_postdata();
-                    }//конец if
+                    }
                     ?>
                 </div>
             </div>
